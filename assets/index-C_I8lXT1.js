@@ -349,7 +349,6 @@ Error generating stack: `+i.message+`
      height: 100vh;
 	 text-rendering: optimizeSpeed;
      background-color: ${({theme:e})=>e.background};
-	 overflow: hidden;
   }
 
   nav {
