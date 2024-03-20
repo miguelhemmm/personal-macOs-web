@@ -19,8 +19,15 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@i18n": ["/i18n/i18n.ts"],
+      "@models": ["/models/index.ts"],
+      "@shared": ["/shared/index.ts"]
+    }
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "build"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

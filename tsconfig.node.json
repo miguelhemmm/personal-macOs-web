@@ -7,5 +7,10 @@
     "allowSyntheticDefaultImports": true,
     "strict": true
   },
+  "baseUrl": "./src",
+  "paths": {
+    "@i18n": ["/i18n/i18n.ts"],
+    "@models": ["/models/index.ts"]
+  },
   "include": ["vite.config.ts"]
 }
