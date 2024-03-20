@@ -1,11 +1,13 @@
 import { TFunction } from "i18next";
-import { FC, useMemo } from "react";
+import { FC, MouseEvent, useMemo, useState } from "react";
 import { StyledButton, StyledImg, StyledItemContainer, StyledNavItem } from "../Navigation.styled";
 import { format } from "date-fns";
 import { es, enUS } from "date-fns/locale";
 import { useBattery } from "react-use";
 import { BatteryIcon } from "./Battery";
 import { Lang } from "models";
+import { Divider } from "@mui/material";
+import { StyledMenu, StyledMenuItem } from "shared";
 
 interface Props {
   translate: TFunction;
@@ -15,6 +17,16 @@ interface Props {
 export const NavigationItems: FC<Props> = ({ translate, lang, toggleLang }) => {
   const battery = useBattery() as { level: number; charging: boolean };
   const { level, charging } = battery;
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const locale = useMemo(() => {
     return lang === "en" ? enUS : es;
@@ -24,7 +36,22 @@ export const NavigationItems: FC<Props> = ({ translate, lang, toggleLang }) => {
     <StyledItemContainer>
       <StyledNavItem $position='flex-start'>
         <li>
-          <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Apple_logo_white.svg/1010px-Apple_logo_white.svg.png' />
+          <img onClick={handleClick} src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Apple_logo_white.svg/1010px-Apple_logo_white.svg.png' />
+          <StyledMenu
+            id='basic-menu'
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <StyledMenuItem onClick={handleClose}>{translate("About.about")}</StyledMenuItem>
+            <Divider />
+            <StyledMenuItem onClick={handleClose}>{translate("About.sleep")}</StyledMenuItem>
+            <StyledMenuItem onClick={handleClose}>{translate("About.restart")}</StyledMenuItem>
+            <StyledMenuItem onClick={handleClose}>{translate("About.shutdown")}</StyledMenuItem>
+          </StyledMenu>
         </li>
         <li>
           <a href='/about'>{translate("Navigation.finder")}</a>

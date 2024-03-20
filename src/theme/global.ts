@@ -9,7 +9,7 @@ const globalStyle = createGlobalStyle`
   :root {
 
 	--primary-color: #007AFF;
-	--white: rgb(242, 242, 247)
+	--white: #e5ded4;
 
     //dark-mode
 	--red-dark: rgb(255, 69, 58);

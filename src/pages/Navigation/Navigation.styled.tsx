@@ -9,7 +9,7 @@ const fadeIn = keyframes`
 `;
 
 export const StyledNav = styled.nav`
-  background-color: ${({ theme }) => theme.nav};
+  background-color: var(--dark-nav);
   width: 100%;
   height: 30px;
   display: flex;
@@ -19,7 +19,7 @@ export const StyledNav = styled.nav`
   & li a {
     font-size: 14px;
     font-weight: bold;
-    color: inherit;
+    color: var(--dark-text);
     text-decoration: none;
   }
 
@@ -64,7 +64,7 @@ export const StyledItemContainer = styled.div`
 `;
 
 export const StyledButton = styled.button<{ $isActive?: boolean }>`
-  background-color: #fff;
+  background-color: var(--white);
   border: none;
   border-radius: 3px;
   font-weight: bold;
