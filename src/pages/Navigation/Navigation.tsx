@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 import { StyledDiv, StyledNav } from "./Navigation.styled";
 import { Lang, Theme } from "models";
 import { NavigationItems } from "./navigation-items";
+import sunIcon from "../../assets/svg/sun.svg";
+import moonIcon from "../../assets/svg/moon.svg";
 
 interface Props {
   toggleLang: (lang: Lang) => void;
@@ -14,7 +16,7 @@ export const Navigation: FC<Props> = ({ theme, toggleLang, toggleTheme }) => {
   const { t, i18n } = useTranslation();
 
   const imageSrc = useMemo(() => {
-    return theme === "light" ? "/src/assets/svg/moon.svg" : "/src/assets/svg/sun.svg";
+    return theme === "light" ? sunIcon : moonIcon;
   }, [theme]);
 
   const currentLang: Lang = useMemo(() => {

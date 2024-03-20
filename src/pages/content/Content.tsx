@@ -4,6 +4,7 @@ import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import { IosCard, StyledButton, StyledButtonGroup } from "shared";
 import { StyledContainer, StyledSpan } from "./Content.styled";
 import myPdfFile from "../../assets/resume.pdf";
+import pixelArtImage from "../../assets/pixel-art-48.png";
 
 interface Props {
   minimize?: boolean;
@@ -63,7 +64,7 @@ export const ContentComponent: FC<Props> = ({ minimize, setMinimize }): ReactEle
     <StyledContainer>
       {renderIosCard()}
       <StyledSpan $minimize={minimize} $isClose={isClose} onClick={() => setIsClose(false)}>
-        <img src='/src/assets/pixel-art-48.png' />
+        <img src={pixelArtImage} />
       </StyledSpan>
     </StyledContainer>
   );

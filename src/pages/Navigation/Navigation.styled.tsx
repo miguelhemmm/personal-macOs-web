@@ -34,7 +34,7 @@ export const StyledDiv = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  padding: 0 20px;
+  padding: 5px 10px;
   align-items: center;
 `;
 
