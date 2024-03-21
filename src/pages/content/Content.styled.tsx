@@ -7,6 +7,10 @@ export const StyledContainer = styled.div`
   justify-content: center;
   padding: 40px 0;
   flex-wrap: wrap-reverse;
+
+  @media only screen and (max-width: 740px) {
+    padding: 0;
+  }
 `;
 
 export const StyledImg = styled.img`

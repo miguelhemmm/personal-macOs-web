@@ -3,6 +3,7 @@ import { FC } from "react";
 import "./toolbar.scss";
 import { StyledDivider, StyledTooltip } from "./Toolbar.styled";
 import { IosCard } from "shared";
+import { useMediaQuery } from "@mui/material";
 
 const icons = [
   { name: "Finder", src: "https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853981255cc36b3a37af_finder.png" },
@@ -20,6 +21,8 @@ interface Props {
 }
 
 export const Toolbar: FC<Props> = ({ minimize, setMinimize }) => {
+  const matches = useMediaQuery("(max-width:740px)");
+
   const renderIosCard = () => {
     return (
       <div onClick={() => setMinimize?.(false)}>
@@ -33,20 +36,24 @@ export const Toolbar: FC<Props> = ({ minimize, setMinimize }) => {
     );
   };
   return (
-    <div className='container'>
-      {icons.map((icon) => (
-        <StyledTooltip arrow title={icon.name} placement='top'>
-          <>
-            {icon.name === "Trash" && <StyledDivider />}
-            <div className='box'>
-              <span className={icon.name === "Trash" ? "item item-bin" : "item"} key={icon.name}>
-                <img src={icon.src} />
-              </span>
-            </div>
-            {minimize && icon.name === "Trash" && renderIosCard()}
-          </>
-        </StyledTooltip>
-      ))}
-    </div>
+    <>
+      {!matches && (
+        <div className='container'>
+          {icons.map((icon) => (
+            <StyledTooltip arrow title={icon.name} placement='top'>
+              <>
+                {icon.name === "Trash" && <StyledDivider />}
+                <div className='box'>
+                  <span className={icon.name === "Trash" ? "item item-bin" : "item"} key={icon.name}>
+                    <img src={icon.src} />
+                  </span>
+                </div>
+                {minimize && icon.name === "Trash" && renderIosCard()}
+              </>
+            </StyledTooltip>
+          ))}
+        </div>
+      )}
+    </>
   );
 };

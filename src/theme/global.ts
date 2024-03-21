@@ -7,9 +7,9 @@ type GlobalThemeProps = {
 
 const globalStyle = createGlobalStyle`
   :root {
-
 	--primary-color: #007AFF;
 	--white: #e5ded4;
+	--transparent-background: rgba(83, 83, 83, 0.4);
 
     //dark-mode
 	--red-dark: rgb(255, 69, 58);
@@ -38,10 +38,9 @@ const globalStyle = createGlobalStyle`
 
   body  {
     -webkit-font-smoothing: antialiased;
-     height: 100vh;
+     height: calc(100vh - 30px);
 	 text-rendering: optimizeSpeed;
      background-color: ${({ theme }: GlobalThemeProps) => theme.background};
-	 overflow: hidden;
   }
 
   nav {

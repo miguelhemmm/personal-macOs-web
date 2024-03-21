@@ -3,4 +3,20 @@
 body {
   font-family: "San Francisco";
   font-weight: 500;
+  overflow: hidden;
+
+  /* Small devices such as large phones (640px and up) */
+  @media only screen and (max-width: 370) {
+    overflow-y: auto;
+  }
+
+  /* Small devices such as large phones (640px and up) */
+  @media only screen and (max-width: 640px) {
+    overflow-y: auto;
+  }
+
+  /* Medium devices such as tablets (768px and up) */
+  @media only screen and (max-width: 768px) {
+    overflow-y: auto;
+  }
 }

@@ -1,8 +1,10 @@
 import { FC, useMemo } from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 import { useTranslation } from "react-i18next";
 import { StyledDiv, StyledNav } from "./Navigation.styled";
 import { Lang, Theme } from "models";
-import { NavigationItems } from "./navigation-items";
+import { MobileNavigation, NavigationItems } from "./navigation-items";
 import sunIcon from "../../assets/svg/sun.svg";
 import moonIcon from "../../assets/svg/moon.svg";
 
@@ -14,6 +16,7 @@ interface Props {
 
 export const Navigation: FC<Props> = ({ theme, toggleLang, toggleTheme }) => {
   const { t, i18n } = useTranslation();
+  const matches = useMediaQuery("(max-width:740px)");
 
   const imageSrc = useMemo(() => {
     return theme === "light" ? sunIcon : moonIcon;
@@ -25,8 +28,8 @@ export const Navigation: FC<Props> = ({ theme, toggleLang, toggleTheme }) => {
 
   return (
     <>
-      <StyledNav>
-        <NavigationItems translate={t} lang={currentLang} toggleLang={toggleLang} />
+      <StyledNav $isDarkTheme={theme === "dark"}>
+        {matches ? <MobileNavigation lang={currentLang} toggleLang={toggleLang} /> : <NavigationItems translate={t} lang={currentLang} toggleLang={toggleLang} />}
       </StyledNav>
       <StyledDiv>
         <span style={{ cursor: "pointer" }} onClick={toggleTheme}>

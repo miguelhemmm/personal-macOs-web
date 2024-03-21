@@ -80,7 +80,7 @@ export const NavigationItems: FC<Props> = ({ translate, lang, toggleLang }) => {
           <StyledButton onClick={() => toggleLang(lang === "en" ? "es" : "en")}>{lang === "es" ? "ES" : "EN"}</StyledButton>
         </li>
         <li>
-          <BatteryIcon level={level * 100} isCharging={charging} />
+          <BatteryIcon level={level && typeof level === "number" ? level * 100 : 1 * 100} isCharging={charging} />
         </li>
         <li>
           <StyledImg src='https://eshop.macsales.com/blog/wp-content/uploads/2021/03/control-center-icon.png' />

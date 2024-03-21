@@ -8,7 +8,7 @@ const fadeIn = keyframes`
   to { opacity: 1; }
 `;
 
-export const StyledNav = styled.nav`
+export const StyledNav = styled.nav<{ $isDarkTheme?: boolean }>`
   background-color: var(--dark-nav);
   width: 100%;
   height: 30px;
@@ -26,10 +26,16 @@ export const StyledNav = styled.nav`
   & img {
     height: 16px;
   }
+
+  @media only screen and (max-width: 740px) {
+    background-color: var(--transparent-background);
+  }
 `;
 
 export const StyledDiv = styled.div`
   background: transparent;
+  position: fixed;
+  z-index: 100;
   width: 100%;
   display: flex;
   justify-content: flex-end;
