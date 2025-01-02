@@ -1,4 +1,10 @@
 import { FC, useMemo, useState } from "react";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
 
 import { Navigation } from "./pages/Navigation";
 import i18n from "i18n/i18n";
@@ -21,13 +27,45 @@ export const App: FC = () => {
     return theme === "dark" ? darkTheme : lightTheme;
   }, [theme]);
 
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route
+        path="/"
+        element={
+          <>
+            <Navigation
+              toggleLang={toggleLang}
+              toggleTheme={themeToggler}
+              theme={theme}
+            />
+            <ContentComponent setMinimize={setMinimize} minimize={minimize} />
+            <Toolbar setMinimize={setMinimize} minimize={minimize} />
+          </>
+        }
+      >
+        <Route
+          index
+          element={
+            <>
+              <Navigation
+                toggleLang={toggleLang}
+                toggleTheme={themeToggler}
+                theme={theme}
+              />
+              <ContentComponent setMinimize={setMinimize} minimize={minimize} />
+              <Toolbar setMinimize={setMinimize} minimize={minimize} />
+            </>
+          }
+        />
+      </Route>
+    )
+  );
+
   return (
     <ThemeContext>
       <ThemeProvider theme={themeMode}>
         <GlobalStyle />
-        <Navigation toggleLang={toggleLang} toggleTheme={themeToggler} theme={theme} />
-        <ContentComponent setMinimize={setMinimize} minimize={minimize} />
-        <Toolbar setMinimize={setMinimize} minimize={minimize} />
+        <RouterProvider router={router} />
       </ThemeProvider>
     </ThemeContext>
   );
