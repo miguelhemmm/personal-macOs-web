@@ -40,17 +40,17 @@ export const Toolbar: FC<Props> = ({ minimize, setMinimize }) => {
       {!matches && (
         <div className='container'>
           {icons.map((icon) => (
-            <StyledTooltip arrow title={icon.name} placement='top'>
-              <>
-                {icon.name === "Trash" && <StyledDivider />}
+            <>
+              {icon.name === "Trash" && <StyledDivider />}
+              <StyledTooltip arrow title={icon.name} placement='top'>
                 <div className='box'>
                   <span className={icon.name === "Trash" ? "item item-bin" : "item"} key={icon.name}>
                     <img src={icon.src} />
                   </span>
                 </div>
-                {minimize && icon.name === "Trash" && renderIosCard()}
-              </>
-            </StyledTooltip>
+              </StyledTooltip>
+              {minimize && icon.name === "Trash" && renderIosCard()}
+            </>
           ))}
         </div>
       )}

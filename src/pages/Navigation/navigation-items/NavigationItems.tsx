@@ -1,8 +1,6 @@
 import { TFunction } from "i18next";
-import { FC, MouseEvent, useMemo, useState } from "react";
+import { FC, MouseEvent, useState } from "react";
 import { StyledButton, StyledImg, StyledItemContainer, StyledNavItem } from "../Navigation.styled";
-import { format } from "date-fns";
-import { es, enUS } from "date-fns/locale";
 import { useBattery } from "react-use";
 import { BatteryIcon } from "./Battery";
 import { Lang } from "models";
@@ -13,8 +11,9 @@ interface Props {
   translate: TFunction;
   lang: string;
   toggleLang: (lang: Lang) => void;
+  currentTime: string;
 }
-export const NavigationItems: FC<Props> = ({ translate, lang, toggleLang }) => {
+export const NavigationItems: FC<Props> = ({ currentTime, translate, lang, toggleLang }) => {
   const battery = useBattery() as { level: number; charging: boolean };
   const { level, charging } = battery;
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -27,10 +26,6 @@ export const NavigationItems: FC<Props> = ({ translate, lang, toggleLang }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-  const locale = useMemo(() => {
-    return lang === "en" ? enUS : es;
-  }, [lang]);
 
   return (
     <StyledItemContainer>
@@ -86,11 +81,7 @@ export const NavigationItems: FC<Props> = ({ translate, lang, toggleLang }) => {
           <StyledImg src='https://eshop.macsales.com/blog/wp-content/uploads/2021/03/control-center-icon.png' />
         </li>
         <li>
-          <a href='/contact'>
-            {format(new Date(), "EEE dd MMMM h:mm aaaa", {
-              locale,
-            })}
-          </a>
+          <a href='/contact'>{currentTime}</a>
         </li>
       </StyledNavItem>
     </StyledItemContainer>

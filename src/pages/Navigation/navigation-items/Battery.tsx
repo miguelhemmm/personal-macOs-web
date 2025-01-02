@@ -39,7 +39,7 @@ export const BatteryIcon: FC<Props> = ({ level, isCharging }) => {
 '
       />
       {isCharging && (
-        <svg x='4.5' y='3' width='16px' height='16px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg x='2.2' y='1' width='20px' height='20px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path d='M7 9l4-8v6h4l-4 8v-6H7z' fill={level < 50 ? "#e5ded4" : "black"} />
         </svg>
       )}

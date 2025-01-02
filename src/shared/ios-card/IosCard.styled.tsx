@@ -12,6 +12,8 @@ export const StyledDiv = styled.div<{ $minimize?: boolean; $isIcon?: boolean }>`
   animation: ${({ $minimize }) => ($minimize ? "genieMinimize 0.5s forwards" : "genieMaximize 0.5s forwards")};
   width: ${({ $isIcon }) => ($isIcon ? "70px" : "100%")};
   height: ${({ $isIcon }) => ($isIcon ? "50px" : "100%")};
+  min-width: ${({ $isIcon }) => ($isIcon ? "50px" : "600px")};
+  max-height: 350px;
 
   @keyframes genieMinimize {
     0% {

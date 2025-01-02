@@ -17,8 +17,8 @@ const globalStyle = createGlobalStyle`
 	--green-dark: rgb(48, 209, 88);
     --dark-background: rgba(84, 67, 63, 1);
     --dark-text: #fff;
-	--dark-card: rgba(24, 23, 23, 0.7);
-	--dark-nav: rgb(24, 23, 23);
+	--dark-card: #121212;
+	--dark-nav: #15202B;
 
     //light-mode
 	--red-light: rgb(255, 59, 48)
