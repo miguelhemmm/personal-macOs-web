@@ -9,11 +9,17 @@ export const StyledDiv = styled.div<{ $minimize?: boolean; $isIcon?: boolean }>`
   flex-direction: column;
   max-width: 600px;
   margin: ${({ $isIcon }) => ($isIcon ? "0" : "20px")};
-  animation: ${({ $minimize }) => ($minimize ? "genieMinimize 0.5s forwards" : "genieMaximize 0.5s forwards")};
+  animation: ${({ $minimize }) =>
+    $minimize ? "genieMinimize 0.5s forwards" : "genieMaximize 0.5s forwards"};
   width: ${({ $isIcon }) => ($isIcon ? "70px" : "100%")};
   height: ${({ $isIcon }) => ($isIcon ? "50px" : "100%")};
   min-width: ${({ $isIcon }) => ($isIcon ? "50px" : "600px")};
   max-height: 350px;
+
+  @media (max-width: 600px) {
+    min-width: ${({ $isIcon }) => ($isIcon ? "50px" : "240px")};
+    min-height: ${({ $isIcon }) => ($isIcon ? "50px" : "380px")};
+  }
 
   @keyframes genieMinimize {
     0% {
@@ -54,7 +60,8 @@ export const StyledDiv = styled.div<{ $minimize?: boolean; $isIcon?: boolean }>`
 
 export const StyledCardHeader = styled.div<{ $isIcon?: boolean }>`
   background-color: ${({ theme }) => theme.nav};
-  border-radius: ${({ $isIcon }) => ($isIcon ? "5px 5px 0 0" : "10px 10px 0 0")};
+  border-radius: ${({ $isIcon }) =>
+    $isIcon ? "5px 5px 0 0" : "10px 10px 0 0"};
   padding: 8px;
   display: flex;
   justify-content: space-between;
@@ -95,7 +102,10 @@ export const StyledDotContainer = styled.div<{ $isIcon?: boolean }>`
   top: 0;
 `;
 
-export const StyledDot = styled.span<{ $backgroundColor: string; $isIcon?: boolean }>`
+export const StyledDot = styled.span<{
+  $backgroundColor: string;
+  $isIcon?: boolean;
+}>`
   height: ${({ $isIcon }) => ($isIcon ? "3px" : "12px")};
   width: ${({ $isIcon }) => ($isIcon ? "3px" : "12px")};
   background-color: ${({ $backgroundColor }) => $backgroundColor};

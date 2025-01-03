@@ -26,37 +26,38 @@ export const StyledSpan = styled.span<{
   cursor: pointer;
   animation: ${({ $minimize, $isClose }) =>
     $minimize || $isClose
-      ? "animationRight 1s ease-in-out"
-      : "animationLeft 1s ease-in-out"};
+      ? "bounceFromRight 1.5s cubic-bezier(0.28, 0.84, 0.42, 1) forwards"
+      : "bounceFromRight 1.5s cubic-bezier(0.28, 0.84, 0.42, 1) forwards"};
 
   & img {
     width: 350px;
   }
 
-  @keyframes animationLeft {
-    0% {
-      transform: translateX(0%);
-    }
-    50% {
-      transform: translateX(80%); /* Gentle move towards the right */
-    }
-    100% {
-      transform: translateX(0%); /* Completes the move to the right */
+  @media (max-width: 600px) {
+    & img {
+      width: 200px;
     }
   }
-
-  @keyframes animationRight {
+  @keyframes bounceFromRight {
     0% {
-      transform: translateX(-0%);
-      padding-left: 500px;
+      /* Start fully off to the right */
+      transform: translateX(100%);
     }
-    50% {
-      transform: translateX(-30%); /* Gentle move towards the left */
-      padding-left: 200px;
+    60% {
+      /* Move to the center */
+      transform: translateX(0%);
+    }
+    75% {
+      /* Bounce slightly past center */
+      transform: translateX(10%);
+    }
+    90% {
+      /* Bounce back towards center */
+      transform: translateX(0%);
     }
     100% {
-      transform: translateX(-20%); /* Completes the move back to the left */
-      padding-left: 100px;
+      /* End in the center */
+      transform: translateX(0%);
     }
   }
 `;
