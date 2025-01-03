@@ -18,5 +18,13 @@
     "sleep": "Reposo",
     "restart": "Reiniciar...",
     "shutdown": "Apagar eqipo..."
+  },
+  "Battery": {
+    "battery": "Batería",
+    "powerSupply": "Fuente de alimentación",
+    "powerAdapter": "adaptador de corriente",
+    "discharging": "Descargando",
+    "fully": "hasta recargarse por completo",
+    "remaining": "Restante"
   }
 }

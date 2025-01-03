@@ -18,5 +18,13 @@
     "sleep": "Sleep",
     "restart": "Restart...",
     "shutdown": "Shut Down..."
+  },
+  "Battery": {
+    "battery": "Battery",
+    "powerSupply": "Power Supply",
+    "powerAdapter": "Power Adapter",
+    "discharging": "Discharging",
+    "fully": "to fully charge",
+    "remaining": "Remaining"
   }
 }
