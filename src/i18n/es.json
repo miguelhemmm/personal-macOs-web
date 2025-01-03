@@ -25,6 +25,7 @@
     "powerAdapter": "adaptador de corriente",
     "discharging": "Descargando",
     "fully": "hasta recargarse por completo",
+    "complete": "Totalmente cargada",
     "remaining": "Restante"
   }
 }

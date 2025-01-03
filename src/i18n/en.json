@@ -25,6 +25,7 @@
     "powerAdapter": "Power Adapter",
     "discharging": "Discharging",
     "fully": "to fully charge",
+    "complete": "Fully charged",
     "remaining": "Remaining"
   }
 }

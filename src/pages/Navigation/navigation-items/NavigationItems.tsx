@@ -9,7 +9,7 @@ import {
 import { useBattery } from "react-use";
 import { BatteryIcon } from "./Battery";
 import { Lang } from "models";
-import { Divider } from "@mui/material";
+import { Divider, Stack } from "@mui/material";
 import { StyledMenu, StyledMenuItem } from "shared";
 
 interface Props {
@@ -151,20 +151,23 @@ export const NavigationItems: FC<Props> = ({
               </StyledMenuItem>
 
               <StyledMenuItem disabled>
-                {`${translate("Battery.powerSupply")}: ${
-                  charging
-                    ? translate("Battery.powerAdapter")
-                    : translate("Battery.battery")
-                }`}
+                <Stack spacing="10px">
+                  {`${translate("Battery.powerSupply")}: ${
+                    charging
+                      ? translate("Battery.powerAdapter")
+                      : translate("Battery.battery")
+                  }`}
+                  {charging ? (
+                    <span>
+                      {level === 1
+                        ? `${translate("Battery.complete")}`
+                        : `${Math.floor(chargingTime / 60)} min ${translate(
+                            "Battery.fully"
+                          )}`}
+                    </span>
+                  ) : null}
+                </Stack>
               </StyledMenuItem>
-
-              {charging ? (
-                <StyledMenuItem disabled>
-                  {`${Math.floor(chargingTime / 60)} min ${translate(
-                    "Battery.fully"
-                  )}`}
-                </StyledMenuItem>
-              ) : null}
             </StyledMenu>
           ) : null}
         </li>
