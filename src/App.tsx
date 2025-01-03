@@ -27,36 +27,28 @@ export const App: FC = () => {
     return theme === "dark" ? darkTheme : lightTheme;
   }, [theme]);
 
+  const AppShell = () => {
+    return (
+      <>
+        <Navigation
+          toggleLang={toggleLang}
+          toggleTheme={themeToggler}
+          theme={theme}
+        />
+        <ContentComponent
+          setMinimize={setMinimize}
+          minimize={minimize}
+          themeMode={themeMode}
+        />
+        <Toolbar setMinimize={setMinimize} minimize={minimize} />
+      </>
+    );
+  };
+
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route
-        path="/"
-        element={
-          <>
-            <Navigation
-              toggleLang={toggleLang}
-              toggleTheme={themeToggler}
-              theme={theme}
-            />
-            <ContentComponent setMinimize={setMinimize} minimize={minimize} />
-            <Toolbar setMinimize={setMinimize} minimize={minimize} />
-          </>
-        }
-      >
-        <Route
-          index
-          element={
-            <>
-              <Navigation
-                toggleLang={toggleLang}
-                toggleTheme={themeToggler}
-                theme={theme}
-              />
-              <ContentComponent setMinimize={setMinimize} minimize={minimize} />
-              <Toolbar setMinimize={setMinimize} minimize={minimize} />
-            </>
-          }
-        />
+      <Route path="/" element={<AppShell />}>
+        <Route index element={<AppShell />} />
       </Route>
     )
   );

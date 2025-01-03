@@ -14,4 +14,7 @@ export interface ThemeProps {
   red: string;
   yellow: string;
   green: string;
+  githubIcon: string;
+  linkedinIcon: string;
+  whatsappIcon: string;
 }

@@ -1,6 +1,7 @@
 import { FC } from "react";
+import { IconProps } from "models/icons/icons";
 
-export const WhatsAppIcon: FC<{ fillColor?: string }> = ({ fillColor }) => {
+export const WhatsAppIcon: FC<IconProps> = ({ fillColor }) => {
   return (
     <svg
       aria-hidden="true"

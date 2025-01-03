@@ -15,21 +15,22 @@ const globalStyle = createGlobalStyle`
 	--red-dark: rgb(255, 69, 58);
 	--yellow-dark: rgb(255, 214, 10);
 	--green-dark: rgb(48, 209, 88);
-    --dark-background: rgba(84, 67, 63, 1);
-    --dark-text: #fff;
+  --dark-background: rgba(84, 67, 63, 1);
+  --dark-text: #fff;
 	--dark-card: #121212;
 	--dark-nav: #15202B;
+  --github-dark:#b687f7;
+  --linkedin-dark: #0a66c2;
+  --whatsapp-dark: #25d366;
 
-    //light-mode
+  //light-mode
 	--red-light: rgb(255, 59, 48)
 	--yellow-light: rgb(255, 204, 0);
 	--green-dark: rgb(52, 199, 89);
-    --light-background: rgba(84, 67, 63, 0.1);
-    --light-text: rgb(24, 23, 23);
+  --light-background: rgba(84, 67, 63, 0.1);
+  --light-text: rgb(24, 23, 23);
 	--light-card: rgba(255, 255, 255, 0.7);
 	--light-nav: #fff;
-
-
   }
 
 	*, *::before, *::after {

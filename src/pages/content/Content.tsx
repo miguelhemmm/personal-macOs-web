@@ -10,6 +10,7 @@ import {
   TypingComponent,
   WhatsAppIcon,
 } from "shared";
+import { ThemeProps } from "models";
 import { StyledContainer, StyledSpan } from "./Content.styled";
 import myPdfFile from "../../assets/resume.pdf";
 import pixelArtImage from "../../assets/pixel-art-48.png";
@@ -17,10 +18,12 @@ import pixelArtImage from "../../assets/pixel-art-48.png";
 interface Props {
   minimize?: boolean;
   setMinimize?: (minimize: boolean) => void;
+  themeMode: ThemeProps;
 }
 export const ContentComponent: FC<Props> = ({
   minimize,
   setMinimize,
+  themeMode,
 }): ReactElement => {
   const { t } = useTranslation();
   const [isClose, setIsClose] = useState<boolean>(false);
@@ -57,17 +60,17 @@ export const ContentComponent: FC<Props> = ({
             </StyledButton>
             <div>
               <a href="https://www.linkedin.com/in/miguelhem/" target="_blank">
-                <LinkedinIcon fillColor="white" />
+                <LinkedinIcon fillColor={themeMode.linkedinIcon} />
               </a>
             </div>
             <div>
               <a href="https://github.com/miguelhemmm" target="_blank">
-                <GithubIcon fillColor="white" />
+                <GithubIcon fillColor={themeMode.githubIcon} />
               </a>
             </div>
             <div>
               <a href=" https://wa.me/+527821039059" target="_blank">
-                <WhatsAppIcon fillColor="white" />
+                <WhatsAppIcon fillColor={themeMode.whatsappIcon} />
               </a>
             </div>
           </StyledButtonGroup>

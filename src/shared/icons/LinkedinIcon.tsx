@@ -1,6 +1,7 @@
 import { FC } from "react";
+import { IconProps } from "models/icons/icons";
 
-export const LinkedinIcon: FC<{ fillColor?: string }> = ({ fillColor }) => {
+export const LinkedinIcon: FC<IconProps> = ({ fillColor }) => {
   return (
     <svg
       aria-hidden="true"

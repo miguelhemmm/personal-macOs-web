@@ -9,6 +9,9 @@ export const darkTheme: ThemeProps = {
   red: "var(--red-dark)",
   green: "var(--green-dark)",
   yellow: "var(--yellow-dark)",
+  githubIcon: "var(--light-nav)",
+  linkedinIcon: "var(--light-nav)",
+  whatsappIcon: "var(--light-nav)",
 };
 
 export const lightTheme: ThemeProps = {
@@ -20,4 +23,7 @@ export const lightTheme: ThemeProps = {
   red: "var(--red-light)",
   green: "var(--green-light)",
   yellow: "var(--yellow-light)",
+  githubIcon: "var(--github-dark)",
+  linkedinIcon: "var(--linkedin-dark)",
+  whatsappIcon: "var(--whatsapp-dark)",
 };

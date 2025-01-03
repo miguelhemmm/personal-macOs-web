@@ -1,7 +1,8 @@
 import { FC } from "react";
+import { IconProps } from "models/icons/icons";
 import "./icons.css";
 
-export const GithubIcon: FC<{ fillColor?: string }> = ({ fillColor }) => {
+export const GithubIcon: FC<IconProps> = ({ fillColor }) => {
   return (
     <svg
       aria-hidden="true"
