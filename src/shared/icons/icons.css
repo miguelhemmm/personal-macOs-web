@@ -1,0 +1,16 @@
+.github-icon {
+  &:hover {
+    fill: #b687f7;
+  }
+}
+.linkedin-icon {
+  &:hover {
+    fill: #0a66c2;
+  }
+}
+
+.whatsapp-icon {
+  &:hover {
+    fill: #25d366;
+  }
+}

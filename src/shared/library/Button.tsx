@@ -17,6 +17,9 @@ export const StyledButton = styled.button`
   & a {
     text-decoration: none;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &:hover {
     background-color: ${({ theme }) => theme.background};

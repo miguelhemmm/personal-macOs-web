@@ -5,7 +5,7 @@ export const StyledContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;
+  height: calc(100vh - 120px);
   flex-wrap: wrap-reverse;
 
   @media only screen and (max-width: 740px) {
@@ -19,9 +19,15 @@ export const StyledImg = styled.img`
   left: 20%;
   object-fit: cover;
 `;
-export const StyledSpan = styled.span<{ $minimize?: boolean; $isClose?: boolean }>`
+export const StyledSpan = styled.span<{
+  $minimize?: boolean;
+  $isClose?: boolean;
+}>`
   cursor: pointer;
-  animation: ${({ $minimize, $isClose }) => ($minimize || $isClose ? "animationRight 1s ease-in-out" : "animationLeft 1s ease-in-out")};
+  animation: ${({ $minimize, $isClose }) =>
+    $minimize || $isClose
+      ? "animationRight 1s ease-in-out"
+      : "animationLeft 1s ease-in-out"};
 
   & img {
     width: 350px;

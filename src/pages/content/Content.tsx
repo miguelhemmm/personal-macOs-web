@@ -2,10 +2,13 @@ import { FC, ReactElement, useState } from "react";
 import { useTranslation } from "react-i18next";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import {
+  GithubIcon,
   IosCard,
+  LinkedinIcon,
   StyledButton,
   StyledButtonGroup,
   TypingComponent,
+  WhatsAppIcon,
 } from "shared";
 import { StyledContainer, StyledSpan } from "./Content.styled";
 import myPdfFile from "../../assets/resume.pdf";
@@ -52,16 +55,21 @@ export const ContentComponent: FC<Props> = ({
               <CloudDownloadIcon />
               Resume
             </StyledButton>
-            <StyledButton>
+            <div>
               <a href="https://www.linkedin.com/in/miguelhem/" target="_blank">
-                Linkedin
+                <LinkedinIcon fillColor="white" />
               </a>
-            </StyledButton>
-            <StyledButton>
+            </div>
+            <div>
               <a href="https://github.com/miguelhemmm" target="_blank">
-                Github
+                <GithubIcon fillColor="white" />
               </a>
-            </StyledButton>
+            </div>
+            <div>
+              <a href=" https://wa.me/+527821039059" target="_blank">
+                <WhatsAppIcon fillColor="white" />
+              </a>
+            </div>
           </StyledButtonGroup>
         }
       />
