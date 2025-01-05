@@ -35,7 +35,7 @@ export const StyledSpan = styled.span<{
 
   @media (max-width: 600px) {
     & img {
-      width: 200px;
+      width: 220px;
     }
   }
   @keyframes bounceFromRight {

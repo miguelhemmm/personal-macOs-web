@@ -18,7 +18,7 @@ export const StyledDiv = styled.div<{ $minimize?: boolean; $isIcon?: boolean }>`
 
   @media (max-width: 600px) {
     min-width: ${({ $isIcon }) => ($isIcon ? "50px" : "240px")};
-    min-height: ${({ $isIcon }) => ($isIcon ? "50px" : "380px")};
+    min-height: ${({ $isIcon }) => ($isIcon ? "50px" : "420px")};
   }
 
   @keyframes genieMinimize {
