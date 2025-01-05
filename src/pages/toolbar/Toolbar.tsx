@@ -4,35 +4,42 @@ import "./toolbar.scss";
 import { StyledDivider, StyledTooltip } from "./Toolbar.styled";
 import { IosCard } from "shared";
 import { useMediaQuery } from "@mui/material";
+import finderIcon from "../../assets/finder-icon.png";
+import siriIcon from "../../assets/siri-icon.png";
+import contactsIcon from "../../assets/contacts-icon.png";
+import messagesIcon from "../../assets/messages-icon.png";
+import notesIcon from "../../assets/notes-icon.png";
+import musicIcon from "../../assets/music-icon.png";
+import trashIcon from "../../assets/trash-icon.png";
 
 const icons = [
   {
     name: "Finder",
-    src: "https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853981255cc36b3a37af_finder.png",
+    src: finderIcon,
   },
   {
     name: "Siri",
-    src: "https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853ff3bafbac60495771_siri.png",
+    src: siriIcon,
   },
   {
     name: "Contacts",
-    src: "https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853743597518c528b9b3_contacts.png",
+    src: contactsIcon,
   },
   {
     name: "Messages",
-    src: "https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853a55558a68e192ee08_messages.png",
+    src: messagesIcon,
   },
   {
     name: "Notes",
-    src: "https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853c849ec3735b52cef9_notes.png",
+    src: notesIcon,
   },
   {
     name: "Music",
-    src: "https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853ba0782d6ff2aca6b3_music.png",
+    src: musicIcon,
   },
   {
     name: "Trash",
-    src: "https://findicons.com/files/icons/569/longhorn_objects/128/trash.png",
+    src: trashIcon,
   },
 ];
 
