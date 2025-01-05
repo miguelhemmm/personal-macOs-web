@@ -16,11 +16,13 @@ interface Props {
   title: ReactElement | string;
   body: ReactElement | string;
   footer: ReactElement | string;
-  setIsClose?: (isClose: boolean) => void;
   isClose?: boolean;
-  setMinimize?: (minimize: boolean) => void;
   minimize?: boolean;
+  maximize?: boolean;
   isIcon?: boolean;
+  setMaximize?: (maximize: boolean) => void;
+  setMinimize?: (minimize: boolean) => void;
+  setIsClose?: (isClose: boolean) => void;
 }
 
 export const IosCard: FC<Props> = ({
@@ -72,7 +74,11 @@ export const IosCard: FC<Props> = ({
                   />
                 )}
               </StyledDot>
-              <StyledDot $isIcon={isIcon} $backgroundColor="rgb(52, 199, 89)">
+              <StyledDot
+                $isIcon={isIcon}
+                $backgroundColor="rgb(52, 199, 89)"
+                onClick={() => setMinimize?.(true)}
+              >
                 {showIcons && (
                   <OpenInFullOutlinedIcon
                     sx={{ fontSize: "10px", color: "var(--dark-nav)" }}

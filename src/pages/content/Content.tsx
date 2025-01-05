@@ -17,11 +17,15 @@ import pixelArtImage from "../../assets/pixel-art-48.png";
 
 interface Props {
   minimize?: boolean;
+  maximize?: boolean;
   setMinimize?: (minimize: boolean) => void;
+  setMaximize?: (maximize: boolean) => void;
   themeMode: ThemeProps;
 }
 export const ContentComponent: FC<Props> = ({
   minimize,
+  maximize,
+  setMaximize,
   setMinimize,
   themeMode,
 }): ReactElement => {
@@ -41,6 +45,8 @@ export const ContentComponent: FC<Props> = ({
     return (
       <IosCard
         setMinimize={setMinimize}
+        setMaximize={setMaximize}
+        maximize={maximize}
         minimize={minimize}
         setIsClose={setIsClose}
         isClose={isClose}

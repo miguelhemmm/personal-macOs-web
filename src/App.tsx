@@ -18,6 +18,7 @@ import { Toolbar } from "./pages/toolbar";
 export const App: FC = () => {
   const { theme, themeToggler } = useTheme();
   const [minimize, setMinimize] = useState<boolean>(false);
+  const [maximize, setMaximize] = useState<boolean>(false);
 
   const toggleLang = (lang: Lang) => {
     i18n.changeLanguage(lang);
@@ -37,6 +38,8 @@ export const App: FC = () => {
         />
         <ContentComponent
           setMinimize={setMinimize}
+          setMaximize={setMaximize}
+          maximize={maximize}
           minimize={minimize}
           themeMode={themeMode}
         />
