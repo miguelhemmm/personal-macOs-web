@@ -381,7 +381,7 @@ Please change the parent <Route path="${p}"> to <Route path="${p==="/"?"*":`${p}
 
   body  {
     -webkit-font-smoothing: antialiased;
-     height: calc(100vh - 30px);
+     height: calc(100dvh - 30px);
 	 text-rendering: optimizeSpeed;
      background-color: ${({theme:e})=>e.background};
   }
