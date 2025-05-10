@@ -39,7 +39,7 @@ const globalStyle = createGlobalStyle`
 
   body  {
     -webkit-font-smoothing: antialiased;
-     height: calc(100vh - 30px);
+     height: calc(100dvh - 30px);
 	 text-rendering: optimizeSpeed;
      background-color: ${({ theme }: GlobalThemeProps) => theme.background};
   }
