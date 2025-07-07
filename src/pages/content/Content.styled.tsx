@@ -9,6 +9,7 @@ export const StyledContainer = styled.div`
   gap: 20px;
   padding: 20px;
   overflow-y: auto;
+  margin-top: 32px;
 
   @media only screen and (max-width: 1200px) {
     flex-direction: column;

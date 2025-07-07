@@ -13,6 +13,7 @@ export const StyledPortfolioContainer = styled.div`
   overflow-x: hidden; /* Prevent horizontal scroll */
   max-width: 100vw;
   box-sizing: border-box;
+  margin-top: 16px;
 
   @media only screen and (max-width: 1200px) {
     flex-direction: column;
