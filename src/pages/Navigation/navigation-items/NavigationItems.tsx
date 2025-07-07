@@ -6,12 +6,15 @@ import {
   StyledImg,
   StyledItemContainer,
   StyledNavItem,
+  StyledNavButton,
+  StyledTimeDisplay,
 } from "../Navigation.styled";
 import { useBattery } from "react-use";
 import { BatteryIcon } from "./Battery";
 import { Lang } from "models";
 import { Divider, Stack } from "@mui/material";
 import { StyledMenu, StyledMenuItem } from "shared";
+import { getTranslatedNavigationItems } from "../../../constants";
 
 interface Props {
   translate: TFunction;
@@ -28,7 +31,7 @@ export const NavigationItems: FC<Props> = ({
 }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   const battery = useBattery() as {
     level: number;
     charging: boolean;
@@ -89,118 +92,16 @@ export const NavigationItems: FC<Props> = ({
           </StyledMenu>
         </li>
 
-        <li>
-          <button 
-            onClick={() => navigate('/')} 
-            style={{ 
-              color: location.pathname === '/' ? '#007ACC' : 'inherit',
-              background: 'none',
-              border: 'none',
-              padding: '4px 8px',
-              cursor: 'pointer',
-              fontSize: 'inherit',
-              fontFamily: 'inherit'
-            }}
-          >
-            {translate("Navigation.finder")}
-          </button>
-        </li>
-        <li>
-          <button 
-            onClick={() => navigate('/experience')} 
-            style={{ 
-              color: location.pathname === '/experience' ? '#007ACC' : 'inherit',
-              background: 'none',
-              border: 'none',
-              padding: '4px 8px',
-              cursor: 'pointer',
-              fontSize: 'inherit',
-              fontFamily: 'inherit'
-            }}
-          >
-            {translate("Navigation.experience")}
-          </button>
-        </li>
-        <li>
-          <button 
-            onClick={() => navigate('/skills')} 
-            style={{ 
-              color: location.pathname === '/skills' ? '#007ACC' : 'inherit',
-              background: 'none',
-              border: 'none',
-              padding: '4px 8px',
-              cursor: 'pointer',
-              fontSize: 'inherit',
-              fontFamily: 'inherit'
-            }}
-          >
-            {translate("Navigation.skills")}
-          </button>
-        </li>
-        <li>
-          <button 
-            onClick={() => navigate('/projects')} 
-            style={{ 
-              color: location.pathname === '/projects' ? '#007ACC' : 'inherit',
-              background: 'none',
-              border: 'none',
-              padding: '4px 8px',
-              cursor: 'pointer',
-              fontSize: 'inherit',
-              fontFamily: 'inherit'
-            }}
-          >
-            {translate("Navigation.projects")}
-          </button>
-        </li>
-        <li>
-          <button 
-            onClick={() => navigate('/about')} 
-            style={{ 
-              color: location.pathname === '/about' ? '#007ACC' : 'inherit',
-              background: 'none',
-              border: 'none',
-              padding: '4px 8px',
-              cursor: 'pointer',
-              fontSize: 'inherit',
-              fontFamily: 'inherit'
-            }}
-          >
-            {translate("Navigation.about")}
-          </button>
-        </li>
-        <li>
-          <button 
-            onClick={() => navigate('/leadership')} 
-            style={{ 
-              color: location.pathname === '/leadership' ? '#007ACC' : 'inherit',
-              background: 'none',
-              border: 'none',
-              padding: '4px 8px',
-              cursor: 'pointer',
-              fontSize: 'inherit',
-              fontFamily: 'inherit'
-            }}
-          >
-            {translate("Navigation.leadership")}
-          </button>
-        </li>
-        <li>
-          <button 
-            onClick={() => navigate('/education')} 
-            style={{ 
-              color: location.pathname === '/education' ? '#007ACC' : 'inherit',
-              background: 'none',
-              border: 'none',
-              padding: '4px 8px',
-              cursor: 'pointer',
-              fontSize: 'inherit',
-              fontFamily: 'inherit'
-            }}
-          >
-            {translate("Navigation.education")}
-          </button>
-        </li>
+        {getTranslatedNavigationItems(translate).map((item) => (
+          <li key={item.path}>
+            <StyledNavButton
+              onClick={() => navigate(item.path)}
+              $isActive={location.pathname === item.path}
+            >
+              {item.label}
+            </StyledNavButton>
+          </li>
+        ))}
       </StyledNavItem>
 
       <StyledNavItem $position="flex-end">
@@ -271,14 +172,9 @@ export const NavigationItems: FC<Props> = ({
           <StyledImg src="https://eshop.macsales.com/blog/wp-content/uploads/2021/03/control-center-icon.png" />
         </li>
         <li>
-          <span style={{ 
-            color: 'inherit',
-            fontSize: 'inherit',
-            fontFamily: 'inherit',
-            cursor: 'default'
-          }}>
+          <StyledTimeDisplay>
             {currentTime}
-          </span>
+          </StyledTimeDisplay>
         </li>
       </StyledNavItem>
     </StyledItemContainer>

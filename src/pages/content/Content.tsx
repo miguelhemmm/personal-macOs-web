@@ -1,4 +1,4 @@
-import { FC, ReactElement, useState } from "react";
+import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
@@ -37,7 +37,7 @@ export const ContentComponent: FC<Props> = ({
   setMaximize,
   setMinimize,
   themeMode,
-}): ReactElement => {
+}) => {
   const { t } = useTranslation();
   const location = useLocation();
   const [isClose, setIsClose] = useState<boolean>(false);
@@ -122,17 +122,22 @@ export const ContentComponent: FC<Props> = ({
     }
   };
 
-  return (
-    <StyledContainer>
-      {location.pathname === '/' && renderIntroCard()}
-      {renderPortfolioSection()}
-      <StyledSpan
-        $minimize={minimize}
-        $isClose={isClose}
-        onClick={() => setIsClose(false)}
-      >
-        <img src={pixelArtImage} />
-      </StyledSpan>
-    </StyledContainer>
-  );
+  // Home page has its own container and pixel art
+  if (location.pathname === '/') {
+    return (
+      <StyledContainer>
+        {renderIntroCard()}
+        <StyledSpan
+          $minimize={minimize}
+          $isClose={isClose}
+          onClick={() => setIsClose(false)}
+        >
+          <img src={pixelArtImage} />
+        </StyledSpan>
+      </StyledContainer>
+    );
+  }
+
+  // Portfolio pages handle their own layout (no wrapping container, no duplicate pixel art)
+  return renderPortfolioSection();
 };

@@ -35,6 +35,8 @@ export const StyledDiv = styled.div<{ $minimize?: boolean; $maximize?: boolean; 
       $maximize ? "100vw" : ($isIcon ? "50px" : "calc(100vw - 20px)")};
     max-width: ${({ $isIcon, $maximize }) => 
       $maximize ? "100vw" : ($isIcon ? "70px" : "calc(100vw - 20px)")};
+    width: ${({ $isIcon, $maximize }) => 
+      $maximize ? "100vw" : ($isIcon ? "70px" : "calc(100vw - 20px)")};
     min-height: ${({ $isIcon, $maximize }) => 
       $maximize ? "100vh" : ($isIcon ? "50px" : "auto")};
     max-height: ${({ $isPortfolio, $maximize }) => 
@@ -43,15 +45,23 @@ export const StyledDiv = styled.div<{ $minimize?: boolean; $maximize?: boolean; 
       $maximize ? "0" : ($isIcon ? "0" : "10px")};
     border-radius: ${({ $maximize, $isIcon }) => 
       $maximize ? "0" : ($isIcon ? "5px" : "15px")};
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   @media (max-width: 600px) {
     min-width: ${({ $isIcon, $maximize }) => 
-      $maximize ? "100vw" : ($isIcon ? "50px" : "calc(100vw - 20px)")};
+      $maximize ? "100vw" : ($isIcon ? "50px" : "calc(100vw - 16px)")};
+    max-width: ${({ $isIcon, $maximize }) => 
+      $maximize ? "100vw" : ($isIcon ? "70px" : "calc(100vw - 16px)")};
+    width: ${({ $isIcon, $maximize }) => 
+      $maximize ? "100vw" : ($isIcon ? "70px" : "calc(100vw - 16px)")};
     min-height: ${({ $isIcon, $maximize }) => 
       $maximize ? "100vh" : ($isIcon ? "50px" : "auto")};
     max-height: ${({ $isPortfolio, $maximize }) => 
       $maximize ? "100vh" : ($isPortfolio ? "55vh" : "45vh")};
+    margin: ${({ $isIcon, $maximize }) => 
+      $maximize ? "0" : ($isIcon ? "0" : "8px")};
   }
 
   @keyframes genieMinimize {

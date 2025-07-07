@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { IosCard, LeadershipSection } from "shared";
+import { FC, useState } from "react";
+import { IosCard, LeadershipSection, PortfolioLayout, PortfolioFooter } from "shared";
 import { ThemeProps } from "models";
 
 interface Props {
@@ -17,18 +17,26 @@ export const LeadershipPage: FC<Props> = ({
   setMaximize,
   themeMode,
 }) => {
+  const [isClose, setIsClose] = useState<boolean>(false);
+
   return (
-    <IosCard
-      setMinimize={setMinimize}
-      setMaximize={setMaximize}
-      maximize={maximize}
+    <PortfolioLayout
       minimize={minimize}
-      setIsClose={() => {}}
-      isClose={false}
-      isPortfolio={true}
-      title="Leadership & Impact"
-      body={<LeadershipSection />}
-      footer={<div style={{ fontSize: '10px', color: themeMode.secondary }}>Leading teams and driving technical innovation at Globant</div>}
-    />
+      isClose={isClose}
+      onPixelArtClick={() => setIsClose(false)}
+    >
+      <IosCard
+        setMinimize={setMinimize}
+        setMaximize={setMaximize}
+        maximize={maximize}
+        minimize={minimize}
+        setIsClose={setIsClose}
+        isClose={isClose}
+        isPortfolio={true}
+        title="Leadership & Impact"
+        body={<LeadershipSection />}
+        footer={<PortfolioFooter color={themeMode.secondary}>Leading teams and driving technical innovation at Globant</PortfolioFooter>}
+      />
+    </PortfolioLayout>
   );
 };

@@ -2,9 +2,21 @@ import styled from "styled-components";
 
 export const StyledProjectsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 20px;
   padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 12px;
+  }
 `;
 
 export const StyledProjectCard = styled.div`
@@ -13,10 +25,20 @@ export const StyledProjectCard = styled.div`
   overflow: hidden;
   border: 1px solid ${({ theme }) => theme.border || 'rgba(255,255,255,0.1)'};
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
   
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 25px ${({ theme }) => theme.accent}22;
+  }
+
+  @media (max-width: 600px) {
+    border-radius: 8px;
+    
+    &:hover {
+      transform: translateY(-2px); /* Reduce transform on mobile */
+    }
   }
 `;
 
@@ -35,6 +57,11 @@ export const StyledProjectImage = styled.div`
 
 export const StyledProjectContent = styled.div`
   padding: 20px;
+  box-sizing: border-box;
+  
+  @media (max-width: 600px) {
+    padding: 15px;
+  }
 `;
 
 export const StyledProjectTitle = styled.h3`

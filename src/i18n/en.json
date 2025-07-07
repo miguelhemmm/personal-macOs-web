@@ -1,6 +1,6 @@
 {
   "Navigation": {
-    "finder": "Finder",
+    "finder": "Home",
     "experience": "Experience",
     "skills": "Skills",
     "projects": "Projects",
@@ -10,27 +10,27 @@
   },
   "Content": {
     "presentation": "Hi, I'm Miguel Angel Hernandez Melo",
-    "body1": "I'm a frontend developer with over 7 years of experience across a diverse range of projects. Currently coding, mentoring, and having fun at #Globant & #Disney.",
+    "body1": "I'm a softwre engineer with over 7 years of experience across a diverse range of projects. Currently coding, mentoring, and having fun at #Globant & #Disney.",
     "body2": "Driving frontend innovation with JavaScript, Angular, and React. I craft captivating user experiences that push the boundaries of digital interactions."
   },
   "Experience": {
     "globant": {
       "position": "Senior Software Engineer - Team Lead",
-      "achievement1": "Led a front-end team to efficiently address and resolve technical requests",
-      "achievement2": "Designed innovative features, significantly enhancing client satisfaction and product usability",
+      "achievement1": "Led a front-end team to efficiently plan, address and resolve complex technical requests",
+      "achievement2": "Deployed over 3 successful applications to production",
       "achievement3": "Migrated legacy AngularJS applications to Angular and React with TypeScript"
     },
     "epam": {
       "position": "Senior Software Engineer",
-      "achievement1": "Proposed innovative approaches, architectures, and dependencies for client applications",
+      "achievement1": "Proposed innovative approaches, architectures, and dependencies for client CMS applications",
       "achievement2": "Developed websites and user interfaces for cruises, restaurants, and hotels",
       "achievement3": "Optimized legacy code, ensuring adherence to best coding practices",
-      "achievement4": "Migrated from jQuery to Vanilla JavaScript and React.js"
+      "achievement4": "Migrated from jQuery to Vanilla JavaScript, Vue and React"
     },
     "tcs": {
       "position": "Software Engineer",
-      "achievement1": "Designed a frontend application utilizing Angular 2+",
-      "achievement2": "Collaborated with planning and development teams to review application features",
+      "achievement1": "Designed, developed and deployed a frontend application utilizing Angular 2+",
+      "achievement2": "Collaborated with a team of 50+ people for planning and development. Reviewed application features",
       "achievement3": "Offered expert technical support for development, installation, and maintenance",
       "achievement4": "Ensured seamless integration of new features with existing systems"
     },
@@ -133,7 +133,7 @@
       "current": {
         "title": "Leadership & Innovation",
         "description": "Now leading teams and driving technical innovation at Globant, mentoring developers and shaping the future of frontend development.",
-        "highlight": "6+ years of progressive growth in the industry."
+        "highlight": "7+ years of progressive growth in the industry."
       }
     },
     "timeline": {

@@ -44,11 +44,14 @@ export const StyledDiv = styled.div`
   align-items: center;
 `;
 
-export const StyledNavItem = styled.ul<{ $position: "flex-start" | "flex-end" | "center" }>`
+export const StyledNavItem = styled.ul<{
+  $position: "flex-start" | "flex-end" | "center";
+}>`
   padding: 10px 20px;
   display: flex;
-  gap: 20px;
-  justify-content: ${({ $position }) => $position === "center" ? "center" : $position};
+  gap: 12px;
+  justify-content: ${({ $position }) =>
+    $position === "center" ? "center" : $position};
   align-items: center;
 
   & li {
@@ -67,7 +70,7 @@ export const StyledItemContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  
+
   @media only screen and (max-width: 740px) {
     position: relative;
     align-items: center;
@@ -83,8 +86,35 @@ export const StyledButton = styled.button<{ $isActive?: boolean }>`
   align-items: center;
   color: var(--light-text);
   justify-content: center;
-  font-size: 12px;
+  font-size: 10px;
   cursor: pointer;
-  animation: ${({ $isActive }) => ($isActive ? `${fadeIn} 0.3s ease-in-out` : "none")};
+  animation: ${({ $isActive }) =>
+    $isActive ? `${fadeIn} 0.3s ease-in-out` : "none"};
   transition: background-color 0.5s ease-in-out;
+`;
+
+export const StyledNavButton = styled.button<{ $isActive?: boolean }>`
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  color: ${({ $isActive }) => ($isActive ? '#007ACC' : 'inherit')};
+  transition: color 0.2s ease;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const StyledTimeDisplay = styled.span`
+  color: inherit;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: default;
 `;

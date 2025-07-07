@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const StyledTimeline = styled.div`
   position: relative;
   padding: 0 20px;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 30px;
     top: 0;
@@ -18,14 +18,14 @@ export const StyledTimeline = styled.div`
 
 export const StyledTimelineItem = styled.div<{ $isLast?: boolean }>`
   position: relative;
-  margin-bottom: ${({ $isLast }) => $isLast ? '0' : '40px'};
+  margin-bottom: ${({ $isLast }) => ($isLast ? "0" : "40px")};
   padding-left: 40px;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 24px;
-    top: 8px;
+    top: 2px;
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -47,7 +47,7 @@ export const StyledTimelineContent = styled.div`
   background: ${({ theme }) => theme.cardSecondary || theme.card};
   border-radius: 8px;
   padding: 16px;
-  border: 1px solid ${({ theme }) => theme.border || 'rgba(255,255,255,0.1)'};
+  border: 1px solid ${({ theme }) => theme.border || "rgba(255,255,255,0.1)"};
 `;
 
 export const StyledCompany = styled.h3`
@@ -85,7 +85,7 @@ export const StyledTechStack = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  
+
   span {
     background: ${({ theme }) => theme.accent}22;
     color: ${({ theme }) => theme.accent};

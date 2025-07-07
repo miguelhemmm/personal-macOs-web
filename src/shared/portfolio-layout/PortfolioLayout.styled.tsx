@@ -1,14 +1,18 @@
 import styled from "@emotion/styled";
 
-export const StyledContainer = styled.div`
+export const StyledPortfolioContainer = styled.div`
   position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  height: calc(100dvh - 120px);
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
   overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  max-width: 100vw;
+  box-sizing: border-box;
 
   @media only screen and (max-width: 1200px) {
     flex-direction: column;
@@ -17,19 +21,19 @@ export const StyledContainer = styled.div`
 
   @media only screen and (max-width: 740px) {
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
     gap: 10px;
-    flex-direction: column; /* Pixel art will appear above card */
+    flex-direction: column;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+    gap: 8px;
   }
 `;
 
-export const StyledImg = styled.img`
-  width: 300px;
-  position: absolute;
-  left: 20%;
-  object-fit: cover;
-`;
-export const StyledSpan = styled.span<{
+export const StyledPixelArt = styled.span<{
   $minimize?: boolean;
   $isClose?: boolean;
 }>`
@@ -61,6 +65,7 @@ export const StyledSpan = styled.span<{
       width: 150px;
     }
   }
+
   @keyframes bounceFromRight {
     0% {
       /* Start fully off to the right */

@@ -1,6 +1,6 @@
 {
   "Navigation": {
-    "finder": "Finder",
+    "finder": "Inicio",
     "experience": "Experiencia",
     "skills": "Habilidades",
     "projects": "Proyectos",
@@ -10,34 +10,34 @@
   },
   "Content": {
     "presentation": "Hola! Soy Miguel Angel Hernández Melo",
-    "body1": "Soy un frontend developer con más de 7 años de experiencia. Estoy desarrollando, mentoreando y divirtiéndome en #Globant & #Disney.",
+    "body1": "Soy un ingeniero de software con más de 7 años de experiencia. Estoy desarrollando, mentoreando y divirtiéndome en #Globant & #Disney.",
     "body2": "Experto en inovación frontend usando JavaScript, Angular, y React. Creando experiencias de usuario redefiniendo interacciones digitales."
   },
   "Experience": {
     "globant": {
       "position": "Senior Software Engineer - Líder de Equipo",
-      "achievement1": "Lideré un equipo frontend para resolver eficientemente solicitudes técnicas",
-      "achievement2": "Diseñé características innovadoras, mejorando significativamente la satisfacción del cliente",
+      "achievement1": "Lider de equipo frontend para planear, ejecutar y resolver solicitudes técnicas complejas de manera eficiente",
+      "achievement2": "Despliegue de más de 3 aplicationes exitosas en producción",
       "achievement3": "Migré aplicaciones legacy de AngularJS a Angular y React con TypeScript"
     },
     "epam": {
       "position": "Senior Software Engineer",
-      "achievement1": "Propuse enfoques innovadores, arquitecturas y dependencias para aplicaciones cliente",
-      "achievement2": "Desarrollé sitios web e interfaces para cruceros, restaurantes y hoteles",
-      "achievement3": "Optimicé código legacy, asegurando adherencia a mejores prácticas",
-      "achievement4": "Migré de jQuery a JavaScript Vanilla y React.js"
+      "achievement1": "Propuse enfoques innovadores, arquitecturas y dependencias para para el CMS utilizado por el cliente",
+      "achievement2": "Desarrollo de sitios web e interfaces para cruceros, restaurantes y hoteles",
+      "achievement3": "Optimización código legacy, asegurando adherencia a mejores prácticas",
+      "achievement4": "Migré de jQuery a JavaScript Vanilla, Vue y React"
     },
     "tcs": {
       "position": "Software Engineer",
-      "achievement1": "Diseñé una aplicación frontend utilizando Angular 2+",
-      "achievement2": "Colaboré con equipos de planificación para revisar características de aplicaciones",
+      "achievement1": "Diseño, desarrollo y despliegue de una aplicación frontend utilizando Angular 2",
+      "achievement2": "Colaboración con un equipo de más de 50 personas. Revisión de características de la aplicación",
       "achievement3": "Ofrecí soporte técnico experto para desarrollo, instalación y mantenimiento",
       "achievement4": "Aseguré integración perfecta de nuevas características con sistemas existentes"
     },
     "freelancer": {
       "company": "Freelancer",
       "position": "Desarrollador Web",
-      "achievement1": "Desarrollé soluciones frontend innovadoras utilizando tecnologías vanguardistas",
+      "achievement1": "Desarrollé soluciones frontend para sitios web de clientes utilizando las tecnologías más avanzadas",
       "achievement2": "Gestión de bases de datos para mantener rendimiento óptimo de aplicaciones",
       "achievement3": "Realicé pruebas unitarias e integración para asegurar requisitos del sistema"
     }
@@ -122,22 +122,22 @@
     "journey": {
       "engineering": {
         "title": "Fundación en Ingeniería",
-        "description": "Comencé mi carrera en Ingeniería de Hidrocarburos, desarrollando pensamiento analítico y habilidades de resolución de problemas.",
+        "description": "Comencé mi carrera en Ingeniería petrolera, desarrollando pensamiento analítico y habilidades de resolución de problemas.",
         "highlight": "Esta base técnica resultó invaluable en el desarrollo de software."
       },
       "transition": {
         "title": "Transición Profesional",
-        "description": "Tomé la audaz decisión de transicionar al desarrollo de software, impulsado por la pasión por la tecnología e innovación.",
+        "description": "Tomé la decisión de transicionar al desarrollo de software, impulsado por la pasión por la tecnología e innovación.",
         "highlight": "Autodidacta en programación mientras trabajaba tiempo completo."
       },
       "current": {
         "title": "Liderazgo e Innovación",
         "description": "Ahora lidero equipos e impulso innovación técnica en Globant, mentoreando desarrolladores y dando forma al futuro del desarrollo frontend.",
-        "highlight": "6+ años de crecimiento progresivo en la industria."
+        "highlight": "7+ años de crecimiento progresivo en la industria."
       }
     },
     "timeline": {
-      "step1": "Ingeniería de Hidrocarburos, desarrollando fundación técnica",
+      "step1": "Ingeniería petrolera, desarrollando fundación técnica",
       "step2": "Inicié desarrollo web freelance, programación autodidacta",
       "step3": "Certificación Business English en Toronto, expandiendo perspectiva internacional",
       "step4": "Desarrollo de software profesional en TCS, EPAM, construyendo experiencia",

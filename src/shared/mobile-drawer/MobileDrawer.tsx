@@ -8,6 +8,7 @@ import {
   StyledNavItem,
   StyledNavList
 } from './MobileDrawer.styled';
+import { getTranslatedNavigationItems } from '../../constants';
 
 interface MobileDrawerProps {
   isOpen: boolean;
@@ -18,16 +19,8 @@ export const MobileDrawer: FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
-
-  const navigationItems = [
-    { path: '/', label: t('Navigation.finder') },
-    { path: '/experience', label: t('Navigation.experience') },
-    { path: '/skills', label: t('Navigation.skills') },
-    { path: '/projects', label: t('Navigation.projects') },
-    { path: '/about', label: t('Navigation.about') },
-    { path: '/leadership', label: t('Navigation.leadership') },
-    { path: '/education', label: t('Navigation.education') },
-  ];
+  
+  const navigationItems = getTranslatedNavigationItems(t);
 
   const handleNavigation = (path: string) => {
     navigate(path);

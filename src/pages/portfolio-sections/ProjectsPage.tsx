@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { IosCard, ProjectsShowcase } from "shared";
+import { FC, useState } from "react";
+import { IosCard, ProjectsShowcase, PortfolioLayout, PortfolioFooter } from "shared";
 import { ThemeProps } from "models";
 
 interface Props {
@@ -17,18 +17,26 @@ export const ProjectsPage: FC<Props> = ({
   setMaximize,
   themeMode,
 }) => {
+  const [isClose, setIsClose] = useState<boolean>(false);
+
   return (
-    <IosCard
-      setMinimize={setMinimize}
-      setMaximize={setMaximize}
-      maximize={maximize}
+    <PortfolioLayout
       minimize={minimize}
-      setIsClose={() => {}}
-      isClose={false}
-      isPortfolio={true}
-      title="Key Projects"
-      body={<ProjectsShowcase />}
-      footer={<div style={{ fontSize: '10px', color: themeMode.secondary }}>Highlighting impactful projects and technical achievements</div>}
-    />
+      isClose={isClose}
+      onPixelArtClick={() => setIsClose(false)}
+    >
+      <IosCard
+        setMinimize={setMinimize}
+        setMaximize={setMaximize}
+        maximize={maximize}
+        minimize={minimize}
+        setIsClose={setIsClose}
+        isClose={isClose}
+        isPortfolio={true}
+        title="Key Projects"
+        body={<ProjectsShowcase />}
+        footer={<PortfolioFooter color={themeMode.secondary}>Highlighting impactful projects and technical achievements</PortfolioFooter>}
+      />
+    </PortfolioLayout>
   );
 };

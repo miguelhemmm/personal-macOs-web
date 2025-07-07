@@ -5,6 +5,18 @@ export const StyledSkillsContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 12px;
+  }
 `;
 
 export const StyledSkillCategory = styled.div`
@@ -12,6 +24,13 @@ export const StyledSkillCategory = styled.div`
   border-radius: 8px;
   padding: 16px;
   border: 1px solid ${({ theme }) => theme.border || 'rgba(255,255,255,0.1)'};
+  width: 100%;
+  box-sizing: border-box;
+  
+  @media (max-width: 600px) {
+    padding: 12px;
+    border-radius: 6px;
+  }
 `;
 
 export const StyledCategoryTitle = styled.h3`

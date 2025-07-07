@@ -1,5 +1,10 @@
-import { FC } from "react";
-import { IosCard, ExperienceTimeline } from "shared";
+import { FC, useState } from "react";
+import {
+  IosCard,
+  ExperienceTimeline,
+  PortfolioLayout,
+  PortfolioFooter,
+} from "shared";
 import { ThemeProps } from "models";
 
 interface Props {
@@ -17,18 +22,30 @@ export const ExperiencePage: FC<Props> = ({
   setMaximize,
   themeMode,
 }) => {
+  const [isClose, setIsClose] = useState<boolean>(false);
+
   return (
-    <IosCard
-      setMinimize={setMinimize}
-      setMaximize={setMaximize}
-      maximize={maximize}
+    <PortfolioLayout
       minimize={minimize}
-      setIsClose={() => {}}
-      isClose={false}
-      isPortfolio={true}
-      title="Professional Experience"
-      body={<ExperienceTimeline />}
-      footer={<div style={{ fontSize: '10px', color: themeMode.secondary }}>6+ years of progressive growth in software development</div>}
-    />
+      isClose={isClose}
+      onPixelArtClick={() => setIsClose(false)}
+    >
+      <IosCard
+        setMinimize={setMinimize}
+        setMaximize={setMaximize}
+        maximize={maximize}
+        minimize={minimize}
+        setIsClose={setIsClose}
+        isClose={isClose}
+        isPortfolio={true}
+        title="Professional Experience"
+        body={<ExperienceTimeline />}
+        footer={
+          <PortfolioFooter color={themeMode.secondary}>
+            7+ years of progressive growth in software development
+          </PortfolioFooter>
+        }
+      />
+    </PortfolioLayout>
   );
 };

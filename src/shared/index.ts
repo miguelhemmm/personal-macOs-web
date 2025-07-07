@@ -10,3 +10,5 @@ export * from "./leadership-section";
 export * from "./education-section";
 export * from "./hamburger-menu";
 export * from "./mobile-drawer";
+export * from "./portfolio-layout";
+export * from "./portfolio-footer";

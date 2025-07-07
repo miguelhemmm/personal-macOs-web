@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { IosCard, AboutSection } from "shared";
+import { FC, useState } from "react";
+import { IosCard, AboutSection, PortfolioLayout, PortfolioFooter } from "shared";
 import { ThemeProps } from "models";
 
 interface Props {
@@ -17,18 +17,26 @@ export const AboutPage: FC<Props> = ({
   setMaximize,
   themeMode,
 }) => {
+  const [isClose, setIsClose] = useState<boolean>(false);
+
   return (
-    <IosCard
-      setMinimize={setMinimize}
-      setMaximize={setMaximize}
-      maximize={maximize}
+    <PortfolioLayout
       minimize={minimize}
-      setIsClose={() => {}}
-      isClose={false}
-      isPortfolio={true}
-      title="About Miguel"
-      body={<AboutSection />}
-      footer={<div style={{ fontSize: '10px', color: themeMode.secondary }}>From Engineering to Software Development - A unique journey</div>}
-    />
+      isClose={isClose}
+      onPixelArtClick={() => setIsClose(false)}
+    >
+      <IosCard
+        setMinimize={setMinimize}
+        setMaximize={setMaximize}
+        maximize={maximize}
+        minimize={minimize}
+        setIsClose={setIsClose}
+        isClose={isClose}
+        isPortfolio={true}
+        title="About Miguel"
+        body={<AboutSection />}
+        footer={<PortfolioFooter color={themeMode.secondary}>From Engineering to Software Development - A unique journey</PortfolioFooter>}
+      />
+    </PortfolioLayout>
   );
 };
