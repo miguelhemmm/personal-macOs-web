@@ -1,5 +1,6 @@
 import { TFunction } from "i18next";
 import { FC, MouseEvent, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   StyledButton,
   StyledImg,
@@ -25,6 +26,9 @@ export const NavigationItems: FC<Props> = ({
   lang,
   toggleLang,
 }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
   const battery = useBattery() as {
     level: number;
     charging: boolean;
@@ -86,25 +90,116 @@ export const NavigationItems: FC<Props> = ({
         </li>
 
         <li>
-          <a href="/about">{translate("Navigation.finder")}</a>
+          <button 
+            onClick={() => navigate('/')} 
+            style={{ 
+              color: location.pathname === '/' ? '#007ACC' : 'inherit',
+              background: 'none',
+              border: 'none',
+              padding: '4px 8px',
+              cursor: 'pointer',
+              fontSize: 'inherit',
+              fontFamily: 'inherit'
+            }}
+          >
+            {translate("Navigation.finder")}
+          </button>
         </li>
         <li>
-          <a href="/contact">{translate("Navigation.file")}</a>
+          <button 
+            onClick={() => navigate('/experience')} 
+            style={{ 
+              color: location.pathname === '/experience' ? '#007ACC' : 'inherit',
+              background: 'none',
+              border: 'none',
+              padding: '4px 8px',
+              cursor: 'pointer',
+              fontSize: 'inherit',
+              fontFamily: 'inherit'
+            }}
+          >
+            {translate("Navigation.experience")}
+          </button>
         </li>
         <li>
-          <a href="/contact">{translate("Navigation.edit")}</a>
+          <button 
+            onClick={() => navigate('/skills')} 
+            style={{ 
+              color: location.pathname === '/skills' ? '#007ACC' : 'inherit',
+              background: 'none',
+              border: 'none',
+              padding: '4px 8px',
+              cursor: 'pointer',
+              fontSize: 'inherit',
+              fontFamily: 'inherit'
+            }}
+          >
+            {translate("Navigation.skills")}
+          </button>
         </li>
         <li>
-          <a href="/contact">{translate("Navigation.view")}</a>
+          <button 
+            onClick={() => navigate('/projects')} 
+            style={{ 
+              color: location.pathname === '/projects' ? '#007ACC' : 'inherit',
+              background: 'none',
+              border: 'none',
+              padding: '4px 8px',
+              cursor: 'pointer',
+              fontSize: 'inherit',
+              fontFamily: 'inherit'
+            }}
+          >
+            {translate("Navigation.projects")}
+          </button>
         </li>
         <li>
-          <a href="/contact">{translate("Navigation.go")}</a>
+          <button 
+            onClick={() => navigate('/about')} 
+            style={{ 
+              color: location.pathname === '/about' ? '#007ACC' : 'inherit',
+              background: 'none',
+              border: 'none',
+              padding: '4px 8px',
+              cursor: 'pointer',
+              fontSize: 'inherit',
+              fontFamily: 'inherit'
+            }}
+          >
+            {translate("Navigation.about")}
+          </button>
         </li>
         <li>
-          <a href="/contact">{translate("Navigation.window")}</a>
+          <button 
+            onClick={() => navigate('/leadership')} 
+            style={{ 
+              color: location.pathname === '/leadership' ? '#007ACC' : 'inherit',
+              background: 'none',
+              border: 'none',
+              padding: '4px 8px',
+              cursor: 'pointer',
+              fontSize: 'inherit',
+              fontFamily: 'inherit'
+            }}
+          >
+            {translate("Navigation.leadership")}
+          </button>
         </li>
         <li>
-          <a href="/contact">{translate("Navigation.help")}</a>
+          <button 
+            onClick={() => navigate('/education')} 
+            style={{ 
+              color: location.pathname === '/education' ? '#007ACC' : 'inherit',
+              background: 'none',
+              border: 'none',
+              padding: '4px 8px',
+              cursor: 'pointer',
+              fontSize: 'inherit',
+              fontFamily: 'inherit'
+            }}
+          >
+            {translate("Navigation.education")}
+          </button>
         </li>
       </StyledNavItem>
 
@@ -176,7 +271,14 @@ export const NavigationItems: FC<Props> = ({
           <StyledImg src="https://eshop.macsales.com/blog/wp-content/uploads/2021/03/control-center-icon.png" />
         </li>
         <li>
-          <a href="/contact">{currentTime}</a>
+          <span style={{ 
+            color: 'inherit',
+            fontSize: 'inherit',
+            fontFamily: 'inherit',
+            cursor: 'default'
+          }}>
+            {currentTime}
+          </span>
         </li>
       </StyledNavItem>
     </StyledItemContainer>

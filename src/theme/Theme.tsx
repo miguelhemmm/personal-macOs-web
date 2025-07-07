@@ -12,6 +12,10 @@ export const darkTheme: ThemeProps = {
   githubIcon: "var(--light-nav)",
   linkedinIcon: "var(--light-nav)",
   whatsappIcon: "var(--light-nav)",
+  secondary: "#888",
+  accent: "#007ACC",
+  cardSecondary: "rgba(255, 255, 255, 0.05)",
+  border: "rgba(255, 255, 255, 0.1)",
 };
 
 export const lightTheme: ThemeProps = {
@@ -26,4 +30,8 @@ export const lightTheme: ThemeProps = {
   githubIcon: "var(--github-dark)",
   linkedinIcon: "var(--linkedin-dark)",
   whatsappIcon: "var(--whatsapp-dark)",
+  secondary: "#666",
+  accent: "#007ACC",
+  cardSecondary: "rgba(0, 0, 0, 0.05)",
+  border: "rgba(0, 0, 0, 0.1)",
 };

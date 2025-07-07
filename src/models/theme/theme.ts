@@ -17,4 +17,8 @@ export interface ThemeProps {
   githubIcon: string;
   linkedinIcon: string;
   whatsappIcon: string;
+  secondary?: string;
+  accent?: string;
+  cardSecondary?: string;
+  border?: string;
 }

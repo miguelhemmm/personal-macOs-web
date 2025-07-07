@@ -1,23 +1,201 @@
 {
   "Navigation": {
     "finder": "Finder",
-    "file": "Archivo",
-    "edit": "Editar",
-    "view": "Ver",
-    "go": "Ir",
-    "window": "Ventana",
-    "help": "Ayuda"
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "about": "Acerca de",
+    "leadership": "Liderazgo",
+    "education": "Educación"
   },
   "Content": {
     "presentation": "Hola! Soy Miguel Angel Hernández Melo",
     "body1": "Soy un frontend developer con más de 7 años de experiencia. Estoy desarrollando, mentoreando y divirtiéndome en #Globant & #Disney.",
     "body2": "Experto en inovación frontend usando JavaScript, Angular, y React. Creando experiencias de usuario redefiniendo interacciones digitales."
   },
+  "Experience": {
+    "globant": {
+      "position": "Senior Software Engineer - Líder de Equipo",
+      "achievement1": "Lideré un equipo frontend para resolver eficientemente solicitudes técnicas",
+      "achievement2": "Diseñé características innovadoras, mejorando significativamente la satisfacción del cliente",
+      "achievement3": "Migré aplicaciones legacy de AngularJS a Angular y React con TypeScript"
+    },
+    "epam": {
+      "position": "Senior Software Engineer",
+      "achievement1": "Propuse enfoques innovadores, arquitecturas y dependencias para aplicaciones cliente",
+      "achievement2": "Desarrollé sitios web e interfaces para cruceros, restaurantes y hoteles",
+      "achievement3": "Optimicé código legacy, asegurando adherencia a mejores prácticas",
+      "achievement4": "Migré de jQuery a JavaScript Vanilla y React.js"
+    },
+    "tcs": {
+      "position": "Software Engineer",
+      "achievement1": "Diseñé una aplicación frontend utilizando Angular 2+",
+      "achievement2": "Colaboré con equipos de planificación para revisar características de aplicaciones",
+      "achievement3": "Ofrecí soporte técnico experto para desarrollo, instalación y mantenimiento",
+      "achievement4": "Aseguré integración perfecta de nuevas características con sistemas existentes"
+    },
+    "freelancer": {
+      "company": "Freelancer",
+      "position": "Desarrollador Web",
+      "achievement1": "Desarrollé soluciones frontend innovadoras utilizando tecnologías vanguardistas",
+      "achievement2": "Gestión de bases de datos para mantener rendimiento óptimo de aplicaciones",
+      "achievement3": "Realicé pruebas unitarias e integración para asegurar requisitos del sistema"
+    }
+  },
+  "Skills": {
+    "frontend": {
+      "title": "Tecnologías Frontend"
+    },
+    "styling": {
+      "title": "Frameworks UI/Estilos"
+    },
+    "testing": {
+      "title": "Testing y Calidad"
+    },
+    "state": {
+      "title": "Gestión de Estado"
+    },
+    "backend": {
+      "title": "Backend y Bases de Datos"
+    },
+    "devops": {
+      "title": "DevOps y Herramientas"
+    }
+  },
+  "Projects": {
+    "angularMigration": {
+      "title": "Migración Legacy AngularJS",
+      "description": "Lideré la migración de múltiples aplicaciones legacy AngularJS a Angular y React moderno con TypeScript, mejorando rendimiento y mantenibilidad.",
+      "impact1": {
+        "label": "Ganancia Rendimiento",
+        "value": "40%"
+      },
+      "impact2": {
+        "label": "Reducción Código",
+        "value": "30%"
+      }
+    },
+    "hospitalityApps": {
+      "title": "Aplicaciones Industria Hotelera",
+      "description": "Desarrollé sitios web e interfaces comprensivas para cruceros, restaurantes y hoteles, creando experiencias de cliente atractivas.",
+      "impact1": {
+        "label": "Industrias Atendidas",
+        "value": "3"
+      },
+      "impact2": {
+        "label": "Engagement Usuario",
+        "value": "+25%"
+      }
+    },
+    "reactMigration": {
+      "title": "Migración jQuery a React",
+      "description": "Migré exitosamente aplicaciones legacy jQuery a React.js moderno, implementando arquitectura basada en componentes y prácticas de desarrollo modernas.",
+      "impact1": {
+        "label": "Tiempo Carga",
+        "value": "-50%"
+      },
+      "impact2": {
+        "label": "Mantenibilidad",
+        "value": "+60%"
+      }
+    },
+    "performanceOptimization": {
+      "title": "Optimización Base de Datos y Rendimiento",
+      "description": "Optimicé consultas de base de datos y rendimiento frontend en múltiples proyectos freelance, asegurando comportamiento óptimo de aplicaciones.",
+      "impact1": {
+        "label": "Velocidad Consultas",
+        "value": "+70%"
+      },
+      "impact2": {
+        "label": "Satisfacción Usuario",
+        "value": "95%"
+      }
+    },
+    "liveDemo": "Demo en Vivo",
+    "sourceCode": "Código Fuente"
+  },
   "About": {
     "about": "Acerca esta Dev",
     "sleep": "Reposo",
     "restart": "Reiniciar...",
-    "shutdown": "Apagar eqipo..."
+    "shutdown": "Apagar equipo...",
+    "journey": {
+      "engineering": {
+        "title": "Fundación en Ingeniería",
+        "description": "Comencé mi carrera en Ingeniería de Hidrocarburos, desarrollando pensamiento analítico y habilidades de resolución de problemas.",
+        "highlight": "Esta base técnica resultó invaluable en el desarrollo de software."
+      },
+      "transition": {
+        "title": "Transición Profesional",
+        "description": "Tomé la audaz decisión de transicionar al desarrollo de software, impulsado por la pasión por la tecnología e innovación.",
+        "highlight": "Autodidacta en programación mientras trabajaba tiempo completo."
+      },
+      "current": {
+        "title": "Liderazgo e Innovación",
+        "description": "Ahora lidero equipos e impulso innovación técnica en Globant, mentoreando desarrolladores y dando forma al futuro del desarrollo frontend.",
+        "highlight": "6+ años de crecimiento progresivo en la industria."
+      }
+    },
+    "timeline": {
+      "step1": "Ingeniería de Hidrocarburos, desarrollando fundación técnica",
+      "step2": "Inicié desarrollo web freelance, programación autodidacta",
+      "step3": "Certificación Business English en Toronto, expandiendo perspectiva internacional",
+      "step4": "Desarrollo de software profesional en TCS, EPAM, construyendo experiencia",
+      "step5": "Líder de equipo en Globant, mentoreando e impulsando innovación"
+    },
+    "philosophy": "Conocer tu propia ignorancia es el primer paso hacia la iluminación."
+  },
+  "Leadership": {
+    "teamLead": {
+      "title": "Liderazgo de Equipo",
+      "description": "Liderando equipos frontend en Globant, coordinando decisiones técnicas y asegurando excelencia en entrega de proyectos."
+    },
+    "innovation": {
+      "title": "Innovación Técnica",
+      "description": "Diseñando características innovadoras y proponiendo arquitecturas vanguardistas que mejoran satisfacción del cliente y usabilidad del producto."
+    },
+    "architecture": {
+      "title": "Diseño de Arquitectura",
+      "description": "Definiendo arquitecturas técnicas y enfoques de desarrollo para aplicaciones cliente complejas en múltiples industrias."
+    },
+    "mentoring": {
+      "title": "Mentoría y Crecimiento",
+      "description": "Mentoreando desarrolladores junior y fomentando crecimiento del equipo a través de intercambio de conocimiento e implementación de mejores prácticas."
+    },
+    "metrics": {
+      "yearsExperience": "Años Experiencia",
+      "projectsLed": "Proyectos Liderados",
+      "majorMigrations": "Migraciones Mayores",
+      "companies": "Empresas Fortune 500"
+    }
+  },
+  "Education": {
+    "uveg": {
+      "institution": "Universidad Virtual del Estado de Guanajuato",
+      "degree": "Ingeniería en Sistemas Computacionales",
+      "location": "México"
+    },
+    "tecnm": {
+      "institution": "Tecnológico Nacional de México",
+      "degree": "Ingeniería de Hidrocarburos",
+      "location": "México"
+    },
+    "connect": {
+      "institution": "Connect International School",
+      "degree": "Certificación Business English",
+      "location": "Toronto, Canadá"
+    },
+    "uniqueBackground": {
+      "title": "Trasfondo Único en Ingeniería",
+      "description": "Mi fundación en Ingeniería de Hidrocarburos proporciona una perspectiva única en desarrollo de software, combinando pensamiento analítico con innovación técnica. Este trasfondo diverso me permite abordar problemas complejos con precisión ingenieril y soluciones creativas."
+    },
+    "languages": {
+      "title": "Idiomas",
+      "spanish": "Español",
+      "english": "Inglés",
+      "native": "Nativo",
+      "business": "Competencia Empresarial"
+    }
   },
   "Battery": {
     "battery": "Batería",

@@ -1,23 +1,201 @@
 {
   "Navigation": {
     "finder": "Finder",
-    "file": "File",
-    "edit": "Edit",
-    "view": "View",
-    "go": "Go",
-    "window": "Window",
-    "help": "Help"
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "about": "About",
+    "leadership": "Leadership",
+    "education": "Education"
   },
   "Content": {
     "presentation": "Hi, I'm Miguel Angel Hernandez Melo",
     "body1": "I'm a frontend developer with over 7 years of experience across a diverse range of projects. Currently coding, mentoring, and having fun at #Globant & #Disney.",
     "body2": "Driving frontend innovation with JavaScript, Angular, and React. I craft captivating user experiences that push the boundaries of digital interactions."
   },
+  "Experience": {
+    "globant": {
+      "position": "Senior Software Engineer - Team Lead",
+      "achievement1": "Led a front-end team to efficiently address and resolve technical requests",
+      "achievement2": "Designed innovative features, significantly enhancing client satisfaction and product usability",
+      "achievement3": "Migrated legacy AngularJS applications to Angular and React with TypeScript"
+    },
+    "epam": {
+      "position": "Senior Software Engineer",
+      "achievement1": "Proposed innovative approaches, architectures, and dependencies for client applications",
+      "achievement2": "Developed websites and user interfaces for cruises, restaurants, and hotels",
+      "achievement3": "Optimized legacy code, ensuring adherence to best coding practices",
+      "achievement4": "Migrated from jQuery to Vanilla JavaScript and React.js"
+    },
+    "tcs": {
+      "position": "Software Engineer",
+      "achievement1": "Designed a frontend application utilizing Angular 2+",
+      "achievement2": "Collaborated with planning and development teams to review application features",
+      "achievement3": "Offered expert technical support for development, installation, and maintenance",
+      "achievement4": "Ensured seamless integration of new features with existing systems"
+    },
+    "freelancer": {
+      "company": "Freelancer",
+      "position": "Web Developer",
+      "achievement1": "Developed innovative front-end solutions utilizing cutting-edge technologies",
+      "achievement2": "Management of databases to maintain optimum application performance",
+      "achievement3": "Performed unit and integration tests to ensure systems requirements"
+    }
+  },
+  "Skills": {
+    "frontend": {
+      "title": "Frontend Technologies"
+    },
+    "styling": {
+      "title": "UI/Styling Frameworks"
+    },
+    "testing": {
+      "title": "Testing & Quality"
+    },
+    "state": {
+      "title": "State Management"
+    },
+    "backend": {
+      "title": "Backend & Databases"
+    },
+    "devops": {
+      "title": "DevOps & Tools"
+    }
+  },
+  "Projects": {
+    "angularMigration": {
+      "title": "Legacy AngularJS Migration",
+      "description": "Led migration of multiple legacy AngularJS applications to modern Angular and React with TypeScript, improving performance and maintainability.",
+      "impact1": {
+        "label": "Performance Gain",
+        "value": "40%"
+      },
+      "impact2": {
+        "label": "Code Reduction",
+        "value": "30%"
+      }
+    },
+    "hospitalityApps": {
+      "title": "Hospitality Industry Applications",
+      "description": "Developed comprehensive websites and user interfaces for cruise lines, restaurants, and hotels, creating engaging customer experiences.",
+      "impact1": {
+        "label": "Industries Served",
+        "value": "3"
+      },
+      "impact2": {
+        "label": "User Engagement",
+        "value": "+25%"
+      }
+    },
+    "reactMigration": {
+      "title": "jQuery to React Migration",
+      "description": "Successfully migrated legacy jQuery applications to modern React.js, implementing component-based architecture and modern development practices.",
+      "impact1": {
+        "label": "Load Time",
+        "value": "-50%"
+      },
+      "impact2": {
+        "label": "Maintainability",
+        "value": "+60%"
+      }
+    },
+    "performanceOptimization": {
+      "title": "Database & Performance Optimization",
+      "description": "Optimized database queries and frontend performance across multiple freelance projects, ensuring optimal application behavior.",
+      "impact1": {
+        "label": "Query Speed",
+        "value": "+70%"
+      },
+      "impact2": {
+        "label": "User Satisfaction",
+        "value": "95%"
+      }
+    },
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code"
+  },
   "About": {
     "about": "About this Dev",
     "sleep": "Sleep",
     "restart": "Restart...",
-    "shutdown": "Shut Down..."
+    "shutdown": "Shut Down...",
+    "journey": {
+      "engineering": {
+        "title": "Engineering Foundation",
+        "description": "Started my career in Hydrocarbon Engineering, developing analytical thinking and problem-solving skills.",
+        "highlight": "This technical foundation proved invaluable in software development."
+      },
+      "transition": {
+        "title": "Career Transition",
+        "description": "Made the bold decision to transition into software development, driven by passion for technology and innovation.",
+        "highlight": "Self-taught programming while working full-time."
+      },
+      "current": {
+        "title": "Leadership & Innovation",
+        "description": "Now leading teams and driving technical innovation at Globant, mentoring developers and shaping the future of frontend development.",
+        "highlight": "6+ years of progressive growth in the industry."
+      }
+    },
+    "timeline": {
+      "step1": "Hydrocarbon Engineering degree, developing technical foundation",
+      "step2": "Started freelance web development, self-taught programming",
+      "step3": "Business English certification in Toronto, expanding international perspective",
+      "step4": "Professional software development at TCS, EPAM, building expertise",
+      "step5": "Team lead at Globant, mentoring and driving innovation"
+    },
+    "philosophy": "Knowing your own ignorance is the first step to enlightenment."
+  },
+  "Leadership": {
+    "teamLead": {
+      "title": "Team Leadership",
+      "description": "Leading frontend teams at Globant, coordinating technical decisions and ensuring project delivery excellence."
+    },
+    "innovation": {
+      "title": "Technical Innovation",
+      "description": "Designing innovative features and proposing cutting-edge architectures that enhance client satisfaction and product usability."
+    },
+    "architecture": {
+      "title": "Architecture Design",
+      "description": "Defining technical architectures and development approaches for complex client applications across multiple industries."
+    },
+    "mentoring": {
+      "title": "Mentoring & Growth",
+      "description": "Mentoring junior developers and fostering team growth through knowledge sharing and best practices implementation."
+    },
+    "metrics": {
+      "yearsExperience": "Years Experience",
+      "projectsLed": "Projects Led",
+      "majorMigrations": "Major Migrations",
+      "companies": "Fortune 500 Companies"
+    }
+  },
+  "Education": {
+    "uveg": {
+      "institution": "Universidad Virtual del Estado de Guanajuato",
+      "degree": "Computer Systems Engineering",
+      "location": "Mexico"
+    },
+    "tecnm": {
+      "institution": "Tecnológico Nacional de México",
+      "degree": "Hydrocarbon Engineering",
+      "location": "Mexico"
+    },
+    "connect": {
+      "institution": "Connect International School",
+      "degree": "Business English Certification",
+      "location": "Toronto, Canada"
+    },
+    "uniqueBackground": {
+      "title": "Unique Engineering Background",
+      "description": "My foundation in Hydrocarbon Engineering provides a unique perspective in software development, combining analytical thinking with technical innovation. This diverse background enables me to approach complex problems with both engineering precision and creative solutions."
+    },
+    "languages": {
+      "title": "Languages",
+      "spanish": "Spanish",
+      "english": "English",
+      "native": "Native",
+      "business": "Business Proficient"
+    }
   },
   "Battery": {
     "battery": "Battery",

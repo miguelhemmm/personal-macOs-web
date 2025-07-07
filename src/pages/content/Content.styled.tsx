@@ -3,13 +3,22 @@ import styled from "@emotion/styled";
 export const StyledContainer = styled.div`
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   height: calc(100dvh - 120px);
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  overflow-y: auto;
+
+  @media only screen and (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
 
   @media only screen and (max-width: 740px) {
-    padding: 0;
+    padding: 10px;
+    gap: 10px;
   }
 `;
 

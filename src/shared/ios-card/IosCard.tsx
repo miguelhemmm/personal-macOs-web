@@ -2,6 +2,7 @@ import { FC, ReactElement, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import RemoveOutlinedIcon from "@mui/icons-material/RemoveOutlined";
 import OpenInFullOutlinedIcon from "@mui/icons-material/OpenInFullOutlined";
+import CloseFullscreenIcon from "@mui/icons-material/CloseFullscreen";
 import {
   StyledBody,
   StyledCardHeader,
@@ -20,6 +21,7 @@ interface Props {
   minimize?: boolean;
   maximize?: boolean;
   isIcon?: boolean;
+  isPortfolio?: boolean;
   setMaximize?: (maximize: boolean) => void;
   setMinimize?: (minimize: boolean) => void;
   setIsClose?: (isClose: boolean) => void;
@@ -31,8 +33,11 @@ export const IosCard: FC<Props> = ({
   footer,
   isClose,
   isIcon,
+  isPortfolio,
   minimize,
+  maximize,
   setMinimize,
+  setMaximize,
   setIsClose,
 }) => {
   const [showIcons, setShowIcons] = useState<boolean>(false);
@@ -45,7 +50,7 @@ export const IosCard: FC<Props> = ({
   return (
     <>
       {!isClose && (
-        <StyledDiv $minimize={minimize} $isIcon={isIcon}>
+        <StyledDiv $minimize={minimize} $maximize={maximize} $isIcon={isIcon} $isPortfolio={isPortfolio}>
           <StyledCardHeader $isIcon={isIcon}>
             <StyledDotContainer
               $isIcon={isIcon}
@@ -77,18 +82,24 @@ export const IosCard: FC<Props> = ({
               <StyledDot
                 $isIcon={isIcon}
                 $backgroundColor="rgb(52, 199, 89)"
-                onClick={() => setMinimize?.(true)}
+                onClick={() => setMaximize?.(!maximize)}
               >
                 {showIcons && (
-                  <OpenInFullOutlinedIcon
-                    sx={{ fontSize: "10px", color: "var(--dark-nav)" }}
-                  />
+                  maximize ? (
+                    <CloseFullscreenIcon
+                      sx={{ fontSize: "10px", color: "var(--dark-nav)" }}
+                    />
+                  ) : (
+                    <OpenInFullOutlinedIcon
+                      sx={{ fontSize: "10px", color: "var(--dark-nav)" }}
+                    />
+                  )
                 )}
               </StyledDot>
             </StyledDotContainer>
             <StyledSpan $isIcon={isIcon}>{title}</StyledSpan>
           </StyledCardHeader>
-          <StyledBody $isIcon={isIcon}>{body}</StyledBody>
+          <StyledBody $isIcon={isIcon} $maximize={maximize}>{body}</StyledBody>
           <StyledFooter $isIcon={isIcon}>{footer}</StyledFooter>
         </StyledDiv>
       )}

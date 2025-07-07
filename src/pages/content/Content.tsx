@@ -1,5 +1,6 @@
 import { FC, ReactElement, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import {
   GithubIcon,
@@ -12,6 +13,14 @@ import {
 } from "shared";
 import { ThemeProps } from "models";
 import { StyledContainer, StyledSpan } from "./Content.styled";
+import { 
+  ExperiencePage, 
+  SkillsPage, 
+  ProjectsPage, 
+  AboutPage, 
+  LeadershipPage, 
+  EducationPage 
+} from "../portfolio-sections";
 import myPdfFile from "../../assets/resume.pdf";
 import pixelArtImage from "../../assets/pixel-art-48.png";
 
@@ -30,6 +39,7 @@ export const ContentComponent: FC<Props> = ({
   themeMode,
 }): ReactElement => {
   const { t } = useTranslation();
+  const location = useLocation();
   const [isClose, setIsClose] = useState<boolean>(false);
 
   const downloadPdf = () => {
@@ -41,7 +51,7 @@ export const ContentComponent: FC<Props> = ({
     document.body.removeChild(link);
   };
 
-  const renderIosCard = () => {
+  const renderIntroCard = () => {
     return (
       <IosCard
         setMinimize={setMinimize}
@@ -85,9 +95,37 @@ export const ContentComponent: FC<Props> = ({
     );
   };
 
+  const renderPortfolioSection = () => {
+    const pageProps = {
+      minimize,
+      maximize,
+      setMinimize,
+      setMaximize,
+      themeMode,
+    };
+
+    switch (location.pathname) {
+      case '/experience':
+        return <ExperiencePage {...pageProps} />;
+      case '/skills':
+        return <SkillsPage {...pageProps} />;
+      case '/projects':
+        return <ProjectsPage {...pageProps} />;
+      case '/about':
+        return <AboutPage {...pageProps} />;
+      case '/leadership':
+        return <LeadershipPage {...pageProps} />;
+      case '/education':
+        return <EducationPage {...pageProps} />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <StyledContainer>
-      {renderIosCard()}
+      {location.pathname === '/' && renderIntroCard()}
+      {renderPortfolioSection()}
       <StyledSpan
         $minimize={minimize}
         $isClose={isClose}
