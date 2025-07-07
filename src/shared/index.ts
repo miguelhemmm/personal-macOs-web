@@ -8,3 +8,5 @@ export * from "./projects-showcase";
 export * from "./about-section";
 export * from "./leadership-section";
 export * from "./education-section";
+export * from "./hamburger-menu";
+export * from "./mobile-drawer";

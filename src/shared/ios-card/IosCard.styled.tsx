@@ -30,13 +30,28 @@ export const StyledDiv = styled.div<{ $minimize?: boolean; $maximize?: boolean; 
   border-radius: ${({ $maximize, $isIcon }) => 
     $maximize ? "0" : ($isIcon ? "5px" : "10px")};
 
+  @media (max-width: 740px) {
+    min-width: ${({ $isIcon, $maximize }) => 
+      $maximize ? "100vw" : ($isIcon ? "50px" : "calc(100vw - 20px)")};
+    max-width: ${({ $isIcon, $maximize }) => 
+      $maximize ? "100vw" : ($isIcon ? "70px" : "calc(100vw - 20px)")};
+    min-height: ${({ $isIcon, $maximize }) => 
+      $maximize ? "100vh" : ($isIcon ? "50px" : "auto")};
+    max-height: ${({ $isPortfolio, $maximize }) => 
+      $maximize ? "100vh" : ($isPortfolio ? "60vh" : "50vh")};
+    margin: ${({ $isIcon, $maximize }) => 
+      $maximize ? "0" : ($isIcon ? "0" : "10px")};
+    border-radius: ${({ $maximize, $isIcon }) => 
+      $maximize ? "0" : ($isIcon ? "5px" : "15px")};
+  }
+
   @media (max-width: 600px) {
     min-width: ${({ $isIcon, $maximize }) => 
-      $maximize ? "100vw" : ($isIcon ? "50px" : "240px")};
+      $maximize ? "100vw" : ($isIcon ? "50px" : "calc(100vw - 20px)")};
     min-height: ${({ $isIcon, $maximize }) => 
-      $maximize ? "100vh" : ($isIcon ? "50px" : "420px")};
+      $maximize ? "100vh" : ($isIcon ? "50px" : "auto")};
     max-height: ${({ $isPortfolio, $maximize }) => 
-      $maximize ? "100vh" : ($isPortfolio ? "450px" : "350px")};
+      $maximize ? "100vh" : ($isPortfolio ? "55vh" : "45vh")};
   }
 
   @keyframes genieMinimize {
@@ -177,6 +192,19 @@ export const StyledBody = styled.span<{ $isIcon?: boolean; $maximize?: boolean }
   /* Firefox scrollbar styling */
   scrollbar-width: thin;
   scrollbar-color: ${({ theme }) => theme.accent || '#007ACC'}44 ${({ theme }) => theme.nav || 'rgba(0,0,0,0.1)'};
+  
+  @media (max-width: 740px) {
+    padding: 15px;
+    gap: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 600px) {
+    padding: 12px;
+    gap: 12px;
+    font-size: 13px;
+  }
 `;
 
 export const StyledFooter = styled.span<{ $isIcon?: boolean }>`

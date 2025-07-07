@@ -19,6 +19,7 @@ export const StyledContainer = styled.div`
   @media only screen and (max-width: 740px) {
     padding: 10px;
     gap: 10px;
+    flex-direction: column-reverse; /* Pixel art will appear above card */
   }
 `;
 
@@ -42,9 +43,22 @@ export const StyledSpan = styled.span<{
     width: 350px;
   }
 
+  @media (max-width: 740px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    
+    & img {
+      width: 180px;
+      height: auto;
+    }
+  }
+
   @media (max-width: 600px) {
     & img {
-      width: 220px;
+      width: 150px;
     }
   }
   @keyframes bounceFromRight {
