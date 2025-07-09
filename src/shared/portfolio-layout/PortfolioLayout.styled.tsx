@@ -1,19 +1,15 @@
 import styled from "@emotion/styled";
 
-export const StyledPortfolioContainer = styled.div`
+export const StyledContainer = styled.div`
   position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  height: calc(100dvh - 120px);
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
   overflow-y: auto;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  max-width: 100vw;
-  box-sizing: border-box;
-  margin-top: 16px;
+  margin-top: 32px;
 
   @media only screen and (max-width: 1200px) {
     flex-direction: column;
@@ -22,15 +18,9 @@ export const StyledPortfolioContainer = styled.div`
 
   @media only screen and (max-width: 740px) {
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
     gap: 10px;
-    flex-direction: column;
-    max-width: 100vw;
-    width: 100%;
-  }
-
-  @media only screen and (max-width: 600px) {
-    padding: 0;
-    gap: 8px;
+    flex-direction: column; /* Pixel art will appear above card */
   }
 `;
 

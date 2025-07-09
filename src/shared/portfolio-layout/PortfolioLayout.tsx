@@ -1,6 +1,6 @@
-import { FC, ReactNode } from 'react';
-import { StyledPortfolioContainer, StyledPixelArt } from './PortfolioLayout.styled';
-import pixelArtImage from '../../assets/pixel-art-48.png';
+import { FC, ReactNode } from "react";
+import { StyledContainer, StyledPixelArt } from "./PortfolioLayout.styled";
+import pixelArtImage from "../../assets/pixel-art-48.png";
 
 interface PortfolioLayoutProps {
   children: ReactNode;
@@ -16,7 +16,7 @@ export const PortfolioLayout: FC<PortfolioLayoutProps> = ({
   onPixelArtClick,
 }) => {
   return (
-    <StyledPortfolioContainer>
+    <StyledContainer>
       {children}
       <StyledPixelArt
         $minimize={minimize}
@@ -25,6 +25,6 @@ export const PortfolioLayout: FC<PortfolioLayoutProps> = ({
       >
         <img src={pixelArtImage} alt="Pixel Art Character" />
       </StyledPixelArt>
-    </StyledPortfolioContainer>
+    </StyledContainer>
   );
 };
