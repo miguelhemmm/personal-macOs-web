@@ -1,5 +1,5 @@
-import { FC, useState } from "react";
-import { IosCard, SkillsMatrix, PortfolioLayout, PortfolioFooter } from "shared";
+import { FC } from "react";
+import { SkillsMatrix, PortfolioPageTemplate } from "shared";
 import { ThemeProps } from "models";
 
 interface Props {
@@ -10,33 +10,13 @@ interface Props {
   themeMode: ThemeProps;
 }
 
-export const SkillsPage: FC<Props> = ({
-  minimize,
-  maximize,
-  setMinimize,
-  setMaximize,
-  themeMode,
-}) => {
-  const [isClose, setIsClose] = useState<boolean>(false);
-
+export const SkillsPage: FC<Props> = (props) => {
   return (
-    <PortfolioLayout
-      minimize={minimize}
-      isClose={isClose}
-      onPixelArtClick={() => setIsClose(false)}
-    >
-      <IosCard
-        setMinimize={setMinimize}
-        setMaximize={setMaximize}
-        maximize={maximize}
-        minimize={minimize}
-        setIsClose={setIsClose}
-        isClose={isClose}
-        isPortfolio={true}
-        title="Technical Skills"
-        body={<SkillsMatrix />}
-        footer={<PortfolioFooter color={themeMode.secondary}>Expertise across frontend, backend, and DevOps technologies</PortfolioFooter>}
-      />
-    </PortfolioLayout>
+    <PortfolioPageTemplate
+      {...props}
+      title="Technical Skills"
+      body={<SkillsMatrix />}
+      footerText="Expertise across frontend, backend, and DevOps technologies"
+    />
   );
 };

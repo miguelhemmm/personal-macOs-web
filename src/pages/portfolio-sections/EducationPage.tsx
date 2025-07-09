@@ -1,5 +1,5 @@
-import { FC, useState } from "react";
-import { IosCard, EducationSection, PortfolioLayout, PortfolioFooter } from "shared";
+import { FC } from "react";
+import { EducationSection, PortfolioPageTemplate } from "shared";
 import { ThemeProps } from "models";
 
 interface Props {
@@ -10,33 +10,13 @@ interface Props {
   themeMode: ThemeProps;
 }
 
-export const EducationPage: FC<Props> = ({
-  minimize,
-  maximize,
-  setMinimize,
-  setMaximize,
-  themeMode,
-}) => {
-  const [isClose, setIsClose] = useState<boolean>(false);
-
+export const EducationPage: FC<Props> = (props) => {
   return (
-    <PortfolioLayout
-      minimize={minimize}
-      isClose={isClose}
-      onPixelArtClick={() => setIsClose(false)}
-    >
-      <IosCard
-        setMinimize={setMinimize}
-        setMaximize={setMaximize}
-        maximize={maximize}
-        minimize={minimize}
-        setIsClose={setIsClose}
-        isClose={isClose}
-        isPortfolio={true}
-        title="Education & Background"
-        body={<EducationSection />}
-        footer={<PortfolioFooter color={themeMode.secondary}>Dual engineering background with international business experience</PortfolioFooter>}
-      />
-    </PortfolioLayout>
+    <PortfolioPageTemplate
+      {...props}
+      title="Education & Background"
+      body={<EducationSection />}
+      footerText="Dual engineering background with international business experience"
+    />
   );
 };

@@ -1,0 +1,1 @@
+export { PortfolioPageTemplate } from './PortfolioPageTemplate';
