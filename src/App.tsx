@@ -1,4 +1,4 @@
-import { FC, useMemo, useState, useEffect } from "react";
+import { FC, useMemo, useState } from "react";
 import {
   Route,
   createBrowserRouter,
@@ -19,18 +19,6 @@ export const App: FC = () => {
   const { theme, themeToggler } = useTheme();
   const [minimize, setMinimize] = useState<boolean>(false);
   const [maximize, setMaximize] = useState<boolean>(false);
-
-  // Handle GitHub Pages SPA routing
-  useEffect(() => {
-    const isRedirected = window.location.search.includes('/?/');
-    if (isRedirected) {
-      const pathname = window.location.search.split('/?/')[1];
-      if (pathname) {
-        const decodedPath = '/' + pathname.replace(/~/g, '&');
-        window.history.replaceState({}, '', decodedPath);
-      }
-    }
-  }, []);
 
   const toggleLang = (lang: Lang) => {
     i18n.changeLanguage(lang);
