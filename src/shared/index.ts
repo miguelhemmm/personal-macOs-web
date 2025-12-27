@@ -3,7 +3,6 @@ export * from "./library";
 export * from "./typing-component";
 export * from "./icons";
 export * from "./experience-timeline";
-export * from "./skills-matrix";
 export * from "./projects-showcase";
 export * from "./about-section";
 export * from "./leadership-section";

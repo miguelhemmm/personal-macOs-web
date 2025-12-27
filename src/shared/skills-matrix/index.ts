@@ -1,1 +1,0 @@
-export { SkillsMatrix } from './SkillsMatrix';

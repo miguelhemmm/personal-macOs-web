@@ -53,7 +53,6 @@ export const App: FC = () => {
       <Route path="/" element={<AppShell />}>
         <Route index element={<AppShell />} />
         <Route path="/experience" element={<AppShell />} />
-        <Route path="/skills" element={<AppShell />} />
         <Route path="/projects" element={<AppShell />} />
         <Route path="/about" element={<AppShell />} />
         <Route path="/leadership" element={<AppShell />} />

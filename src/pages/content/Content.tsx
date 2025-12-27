@@ -13,13 +13,12 @@ import {
 } from "shared";
 import { ThemeProps } from "models";
 import { StyledContainer, StyledSpan } from "./Content.styled";
-import { 
-  ExperiencePage, 
-  SkillsPage, 
-  ProjectsPage, 
-  AboutPage, 
-  LeadershipPage, 
-  EducationPage 
+import {
+  ExperiencePage,
+  ProjectsPage,
+  AboutPage,
+  LeadershipPage,
+  EducationPage,
 } from "../portfolio-sections";
 import myPdfFile from "../../assets/resume.pdf";
 import pixelArtImage from "../../assets/pixel-art-48.png";
@@ -105,17 +104,15 @@ export const ContentComponent: FC<Props> = ({
     };
 
     switch (location.pathname) {
-      case '/experience':
+      case "/experience":
         return <ExperiencePage {...pageProps} />;
-      case '/skills':
-        return <SkillsPage {...pageProps} />;
-      case '/projects':
+      case "/projects":
         return <ProjectsPage {...pageProps} />;
-      case '/about':
+      case "/about":
         return <AboutPage {...pageProps} />;
-      case '/leadership':
+      case "/leadership":
         return <LeadershipPage {...pageProps} />;
-      case '/education':
+      case "/education":
         return <EducationPage {...pageProps} />;
       default:
         return null;
@@ -123,7 +120,7 @@ export const ContentComponent: FC<Props> = ({
   };
 
   // Home page has its own container and pixel art
-  if (location.pathname === '/') {
+  if (location.pathname === "/") {
     return (
       <StyledContainer>
         {renderIntroCard()}
