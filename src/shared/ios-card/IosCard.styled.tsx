@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledDiv = styled.div<{ $minimize?: boolean; $maximize?: boolean; $isIcon?: boolean; $isPortfolio?: boolean }>`
+export const StyledDiv = styled.div<{ $minimize?: boolean; $maximize?: boolean; $isIcon?: boolean; $isPortfolio?: boolean; $isMinimizeAnimating?: boolean }>`
   background-color: ${({ theme }) => theme.card};
   border-radius: ${({ $isIcon }) => ($isIcon ? "5px" : "10px")};
   font-size: 14px;
@@ -8,14 +8,21 @@ export const StyledDiv = styled.div<{ $minimize?: boolean; $maximize?: boolean; 
   position: ${({ $maximize }) => ($maximize ? "fixed" : "relative")};
   flex-direction: column;
   max-width: ${({ $maximize }) => ($maximize ? "none" : "600px")};
-  margin: ${({ $isIcon, $maximize }) => 
+  margin: ${({ $isIcon, $maximize }) =>
     $maximize ? "0" : ($isIcon ? "0" : "20px")};
-  animation: ${({ $minimize, $maximize }) =>
-    $minimize ? "genieMinimize 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards" : 
+  /* Animation only plays when isMinimizeAnimating is true (user just clicked minimize) */
+  animation: ${({ $isMinimizeAnimating, $maximize }) =>
+    $isMinimizeAnimating ? "genieMinimize 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards" :
     $maximize ? "maximizeCard 0.4s cubic-bezier(0.2, 0.0, 0.2, 1) forwards" :
-    "restoreCard 0.4s cubic-bezier(0.4, 0.0, 0.2, 1) forwards"};
-  will-change: ${({ $minimize, $maximize }) => 
-    ($minimize || $maximize) ? "transform, border-radius, box-shadow" : "auto"};
+    "none"};
+  /* Apply minimized visual state directly when minimize=true but not animating */
+  opacity: ${({ $minimize, $isMinimizeAnimating }) =>
+    ($minimize && !$isMinimizeAnimating) ? 0 : 1};
+  transform: ${({ $minimize, $isMinimizeAnimating }) =>
+    ($minimize && !$isMinimizeAnimating) ? "scale(1) translate(80%, 180%)" : "none"};
+  transform-origin: ${({ $minimize }) => $minimize ? "bottom right" : "center"};
+  will-change: ${({ $maximize, $isMinimizeAnimating }) =>
+    ($isMinimizeAnimating || $maximize) ? "transform, border-radius, box-shadow, opacity" : "auto"};
   width: ${({ $isIcon, $maximize }) => 
     $maximize ? "100vw" : ($isIcon ? "70px" : "100%")};
   height: ${({ $isIcon, $maximize }) => 

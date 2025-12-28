@@ -22,9 +22,11 @@ interface Props {
   maximize?: boolean;
   isIcon?: boolean;
   isPortfolio?: boolean;
+  isMinimizeAnimating?: boolean;
   setMaximize?: (maximize: boolean) => void;
   setMinimize?: (minimize: boolean) => void;
   setIsClose?: (isClose: boolean) => void;
+  setIsMinimizeAnimating?: (isAnimating: boolean) => void;
 }
 
 export const IosCard: FC<Props> = ({
@@ -36,9 +38,11 @@ export const IosCard: FC<Props> = ({
   isPortfolio,
   minimize,
   maximize,
+  isMinimizeAnimating,
   setMinimize,
   setMaximize,
   setIsClose,
+  setIsMinimizeAnimating,
 }) => {
   const [showIcons, setShowIcons] = useState<boolean>(false);
 
@@ -50,7 +54,18 @@ export const IosCard: FC<Props> = ({
   return (
     <>
       {!isClose && (
-        <StyledDiv $minimize={minimize} $maximize={maximize} $isIcon={isIcon} $isPortfolio={isPortfolio}>
+        <StyledDiv
+          $minimize={minimize}
+          $maximize={maximize}
+          $isIcon={isIcon}
+          $isPortfolio={isPortfolio}
+          $isMinimizeAnimating={isMinimizeAnimating}
+          onAnimationEnd={() => {
+            if (isMinimizeAnimating) {
+              setIsMinimizeAnimating?.(false);
+            }
+          }}
+        >
           <StyledCardHeader $isIcon={isIcon}>
             <StyledDotContainer
               $isIcon={isIcon}

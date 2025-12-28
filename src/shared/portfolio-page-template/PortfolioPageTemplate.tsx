@@ -1,4 +1,4 @@
-import { FC, useState, ReactElement } from "react";
+import { FC, ReactElement } from "react";
 import { IosCard, PortfolioLayout, PortfolioFooter } from "shared";
 import { ThemeProps } from "models";
 
@@ -11,6 +11,10 @@ interface Props {
   title: string;
   body: ReactElement;
   footerText: string;
+  isClose?: boolean;
+  setIsClose?: (isClose: boolean) => void;
+  isMinimizeAnimating?: boolean;
+  setIsMinimizeAnimating?: (isAnimating: boolean) => void;
 }
 
 export const PortfolioPageTemplate: FC<Props> = ({
@@ -22,15 +26,13 @@ export const PortfolioPageTemplate: FC<Props> = ({
   title,
   body,
   footerText,
+  isClose,
+  setIsClose,
+  isMinimizeAnimating,
+  setIsMinimizeAnimating,
 }) => {
-  const [isClose, setIsClose] = useState<boolean>(false);
-
   return (
-    <PortfolioLayout
-      minimize={minimize}
-      isClose={isClose}
-      onPixelArtClick={() => setIsClose(false)}
-    >
+    <PortfolioLayout>
       <IosCard
         setMinimize={setMinimize}
         setMaximize={setMaximize}
@@ -38,6 +40,8 @@ export const PortfolioPageTemplate: FC<Props> = ({
         minimize={minimize}
         setIsClose={setIsClose}
         isClose={isClose}
+        isMinimizeAnimating={isMinimizeAnimating}
+        setIsMinimizeAnimating={setIsMinimizeAnimating}
         isPortfolio={true}
         title={title}
         body={body}

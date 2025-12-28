@@ -8,6 +8,10 @@ interface Props {
   setMinimize?: (minimize: boolean) => void;
   setMaximize?: (maximize: boolean) => void;
   themeMode: ThemeProps;
+  isClose?: boolean;
+  setIsClose?: (isClose: boolean) => void;
+  isMinimizeAnimating?: boolean;
+  setIsMinimizeAnimating?: (isAnimating: boolean) => void;
 }
 
 export const ExperiencePage: FC<Props> = (props) => {

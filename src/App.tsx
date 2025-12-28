@@ -1,8 +1,6 @@
 import { FC, useMemo, useState } from "react";
 import {
-  Route,
   createBrowserRouter,
-  createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
 
@@ -14,11 +12,25 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./theme/global";
 import { ContentComponent } from "./pages/content";
 import { Toolbar } from "./pages/toolbar";
+import { StyledContentWrapper, StyledPixelArt } from "./App.styled";
+import pixelArtImage from "./assets/pixel-art-48.png";
 
-export const App: FC = () => {
+// AppLayout component defined outside App to prevent recreation on re-renders
+const AppLayout: FC = () => {
   const { theme, themeToggler } = useTheme();
   const [minimize, setMinimize] = useState<boolean>(false);
   const [maximize, setMaximize] = useState<boolean>(false);
+  const [isClose, setIsClose] = useState<boolean>(false);
+  const [hasAnimated, setHasAnimated] = useState<boolean>(false);
+  const [isMinimizeAnimating, setIsMinimizeAnimating] = useState<boolean>(false);
+
+  // Wrapper to trigger animation only when going from not-minimized to minimized
+  const handleMinimize = (value: boolean) => {
+    if (value && !minimize) {
+      setIsMinimizeAnimating(true);
+    }
+    setMinimize(value);
+  };
 
   const toggleLang = (lang: Lang) => {
     i18n.changeLanguage(lang);
@@ -28,45 +40,51 @@ export const App: FC = () => {
     return theme === "dark" ? darkTheme : lightTheme;
   }, [theme]);
 
-  const AppShell = () => {
-    return (
-      <>
-        <Navigation
-          toggleLang={toggleLang}
-          toggleTheme={themeToggler}
-          theme={theme}
-        />
+  return (
+    <ThemeProvider theme={themeMode}>
+      <GlobalStyle />
+      <Navigation
+        toggleLang={toggleLang}
+        toggleTheme={themeToggler}
+        theme={theme}
+      />
+      <StyledContentWrapper>
         <ContentComponent
-          setMinimize={setMinimize}
+          setMinimize={handleMinimize}
           setMaximize={setMaximize}
           maximize={maximize}
           minimize={minimize}
           themeMode={themeMode}
+          isClose={isClose}
+          setIsClose={setIsClose}
+          isMinimizeAnimating={isMinimizeAnimating}
+          setIsMinimizeAnimating={setIsMinimizeAnimating}
         />
-        <Toolbar setMinimize={setMinimize} minimize={minimize} />
-      </>
-    );
-  };
-
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<AppShell />}>
-        <Route index element={<AppShell />} />
-        <Route path="/experience" element={<AppShell />} />
-        <Route path="/projects" element={<AppShell />} />
-        <Route path="/about" element={<AppShell />} />
-        <Route path="/leadership" element={<AppShell />} />
-        <Route path="/education" element={<AppShell />} />
-      </Route>
-    )
+        <StyledPixelArt
+          $hasAnimated={hasAnimated}
+          onAnimationEnd={() => setHasAnimated(true)}
+          onClick={() => setIsClose(false)}
+        >
+          <img src={pixelArtImage} alt="Pixel Art Character" />
+        </StyledPixelArt>
+      </StyledContentWrapper>
+      <Toolbar setMinimize={setMinimize} minimize={minimize} />
+    </ThemeProvider>
   );
+};
 
+// Router created at module level to prevent recreation
+const router = createBrowserRouter([
+  {
+    path: "*",
+    element: <AppLayout />,
+  },
+]);
+
+export const App: FC = () => {
   return (
     <ThemeContext>
-      <ThemeProvider theme={themeMode}>
-        <GlobalStyle />
-        <RouterProvider router={router} />
-      </ThemeProvider>
+      <RouterProvider router={router} />
     </ThemeContext>
   );
 };
