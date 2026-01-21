@@ -12,3 +12,5 @@ export * from "./mobile-drawer";
 export * from "./portfolio-layout";
 export * from "./portfolio-footer";
 export * from "./portfolio-page-template";
+export * from "./window";
+export * from "./window-renderer";

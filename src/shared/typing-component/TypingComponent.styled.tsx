@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import styled, { keyframes } from "styled-components";
 
 // Define the typing and cursor animations using keyframes

@@ -10,6 +10,8 @@ export default defineConfig({
       models: "/src/models/index.ts",
       shared: "/src/shared/index.ts",
       theme: "/src/theme/index.ts",
+      context: "/src/context/index.ts",
+      apps: "/src/apps/index.ts",
     },
   },
   plugins: [

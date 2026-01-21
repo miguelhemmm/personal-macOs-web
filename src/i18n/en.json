@@ -205,5 +205,58 @@
     "fully": "to fully charge",
     "complete": "Fully charged",
     "remaining": "Remaining"
+  },
+  "Terminal": {
+    "welcome": "Welcome to Miguel's Terminal!",
+    "typeHelp": "Type 'help' for available commands."
+  },
+  "Notes": {
+    "newNote": "New Note",
+    "search": "Search",
+    "delete": "Delete",
+    "noContent": "No additional text",
+    "startTyping": "Start typing...",
+    "noNoteSelected": "Select a note or create a new one",
+    "createNote": "Create Note"
+  },
+  "Mail": {
+    "title": "Get in Touch",
+    "subtitle": "Have a question or want to work together? Send me a message!",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "What is this about?",
+    "message": "Message",
+    "messagePlaceholder": "Your message...",
+    "send": "Send Message",
+    "sending": "Opening Mail Client...",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email",
+    "successTitle": "Message Sent!",
+    "successMessage": "Your default mail client has been opened with the message. Please send the email to complete the process.",
+    "sendAnother": "Send Another Message",
+    "errorTitle": "Something went wrong",
+    "errorMessage": "Unable to open your mail client. Please try again or contact me directly at miguelhem.dev@gmail.com",
+    "tryAgain": "Try Again"
+  },
+  "Settings": {
+    "general": "General",
+    "appearance": "Appearance",
+    "language": "Language",
+    "about": "About",
+    "version": "Version",
+    "developer": "Developer",
+    "framework": "Framework",
+    "buildTool": "Build Tool",
+    "darkMode": "Dark Mode",
+    "appearanceDesc": "Switch between light and dark themes. Dark mode is easier on the eyes in low-light environments.",
+    "selectLanguage": "Select Language",
+    "languageDesc": "The interface will be displayed in the selected language.",
+    "aboutDesc": "A macOS-inspired personal portfolio website built with React, TypeScript, and modern web technologies.",
+    "techStack": "Technology Stack",
+    "createdBy": "Created by",
+    "rights": "All rights reserved."
   }
 }

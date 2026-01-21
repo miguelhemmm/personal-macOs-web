@@ -1,9 +1,10 @@
 // Toolbar.tsx
 import { FC, Fragment, useRef, useState, useEffect } from "react";
 import "./toolbar.scss";
-import { StyledDivider, StyledTooltip } from "./Toolbar.styled";
-import { IosCard } from "shared";
+import { StyledDivider, StyledTooltip, StyledDockIndicator } from "./Toolbar.styled";
 import { useMediaQuery } from "@mui/material";
+import { useWindowManager } from "context";
+import { AppId } from "models";
 import finderIcon from "../../assets/finder-icon.png";
 import siriIcon from "../../assets/siri-icon.png";
 import contactsIcon from "../../assets/contacts-icon.png";
@@ -12,34 +13,72 @@ import notesIcon from "../../assets/notes-icon.png";
 import musicIcon from "../../assets/music-icon.png";
 import trashIcon from "../../assets/trash-icon.png";
 
-const icons = [
+interface DockIcon {
+  name: string;
+  src: string;
+  appId: AppId;
+  emoji?: string;
+}
+
+const icons: DockIcon[] = [
   {
     name: "Finder",
     src: finderIcon,
+    appId: "finder",
   },
   {
-    name: "Siri",
-    src: siriIcon,
+    name: "Terminal",
+    src: "",
+    appId: "terminal",
+    emoji: "💻",
   },
   {
-    name: "Contacts",
-    src: contactsIcon,
-  },
-  {
-    name: "Messages",
-    src: messagesIcon,
+    name: "Calculator",
+    src: "",
+    appId: "calculator",
+    emoji: "🧮",
   },
   {
     name: "Notes",
     src: notesIcon,
+    appId: "notes",
+  },
+  {
+    name: "Mail",
+    src: "",
+    appId: "mail",
+    emoji: "✉️",
+  },
+  {
+    name: "Settings",
+    src: "",
+    appId: "settings",
+    emoji: "⚙️",
+  },
+  {
+    name: "Messages",
+    src: messagesIcon,
+    appId: "messages",
+  },
+  {
+    name: "Contacts",
+    src: contactsIcon,
+    appId: "contacts",
   },
   {
     name: "Music",
     src: musicIcon,
+    appId: "music",
+  },
+  {
+    name: "Siri",
+    src: siriIcon,
+    appId: "siri",
   },
   {
     name: "Trash",
     src: trashIcon,
+    appId: "trash",
   },
 ];
 
@@ -48,11 +87,12 @@ interface Props {
   setMinimize?: (minimize: boolean) => void;
 }
 
-export const Toolbar: FC<Props> = ({ minimize, setMinimize }) => {
+export const Toolbar: FC<Props> = () => {
   const matches = useMediaQuery("(max-width:740px)");
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const { openWindow, isAppOpen } = useWindowManager();
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -103,18 +143,10 @@ export const Toolbar: FC<Props> = ({ minimize, setMinimize }) => {
     return -(scale - 1) * 25; // Move up based on scale
   };
 
-  const renderIosCard = () => {
-    return (
-      <div onClick={() => setMinimize?.(false)}>
-        <IosCard
-          title="miguelhem@Macbook-Pro"
-          body="Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but occasionally circumstances occur in which toil and pain can procure him some great pleasure"
-          footer=""
-          isIcon
-        />
-      </div>
-    );
+  const handleIconClick = (appId: AppId) => {
+    openWindow(appId);
   };
+
   return (
     <>
       {!matches && (
@@ -122,7 +154,8 @@ export const Toolbar: FC<Props> = ({ minimize, setMinimize }) => {
           {icons.map((icon, index) => {
             const scale = calculateScale(index);
             const translateY = calculateTranslateY(scale);
-            
+            const appOpen = isAppOpen(icon.appId);
+
             return (
               <Fragment key={icon.name}>
                 {icon.name === "Trash" && <StyledDivider />}
@@ -132,23 +165,28 @@ export const Toolbar: FC<Props> = ({ minimize, setMinimize }) => {
                   placement="top"
                   key={icon.name}
                 >
-                  <div 
+                  <div
                     className="box"
                     style={{
                       transform: `scale(${scale}) translateY(${translateY}px)`,
                       transition: isHovering ? 'transform 0.2s cubic-bezier(0.2, 0.0, 0.2, 1)' : 'transform 0.3s ease-out',
                       willChange: isHovering ? 'transform' : 'auto'
                     }}
+                    onClick={() => handleIconClick(icon.appId)}
                   >
                     <span
                       className={icon.name === "Trash" ? "item item-bin" : "item"}
                       key={icon.name}
                     >
-                      <img src={icon.src} />
+                      {icon.src ? (
+                        <img src={icon.src} alt={icon.name} />
+                      ) : (
+                        <span className="emoji-icon">{icon.emoji}</span>
+                      )}
                     </span>
+                    {appOpen && <StyledDockIndicator />}
                   </div>
                 </StyledTooltip>
-                {minimize && icon.name === "Trash" && renderIosCard()}
               </Fragment>
             );
           })}

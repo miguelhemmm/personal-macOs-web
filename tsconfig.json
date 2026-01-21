@@ -22,9 +22,11 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./src",
     "paths": {
-      "@i18n": ["/i18n/i18n.ts"],
-      "@models": ["/models/index.ts"],
-      "@shared": ["/shared/index.ts"]
+      "@i18n": ["i18n/i18n.ts"],
+      "@models": ["models/index.ts"],
+      "@shared": ["shared/index.ts"],
+      "@context": ["context/index.ts"],
+      "@apps": ["apps/index.ts"]
     }
   },
   "include": ["src/**/*"],

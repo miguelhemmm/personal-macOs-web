@@ -205,5 +205,58 @@
     "fully": "hasta recargarse por completo",
     "complete": "Totalmente cargada",
     "remaining": "Restante"
+  },
+  "Terminal": {
+    "welcome": "¡Bienvenido a la Terminal de Miguel!",
+    "typeHelp": "Escribe 'help' para ver los comandos disponibles."
+  },
+  "Notes": {
+    "newNote": "Nueva Nota",
+    "search": "Buscar",
+    "delete": "Eliminar",
+    "noContent": "Sin texto adicional",
+    "startTyping": "Empieza a escribir...",
+    "noNoteSelected": "Selecciona una nota o crea una nueva",
+    "createNote": "Crear Nota"
+  },
+  "Mail": {
+    "title": "Contáctame",
+    "subtitle": "¿Tienes alguna pregunta o quieres trabajar juntos? ¡Envíame un mensaje!",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Correo",
+    "emailPlaceholder": "tu.correo@ejemplo.com",
+    "subject": "Asunto",
+    "subjectPlaceholder": "¿De qué se trata?",
+    "message": "Mensaje",
+    "messagePlaceholder": "Tu mensaje...",
+    "send": "Enviar Mensaje",
+    "sending": "Abriendo Cliente de Correo...",
+    "required": "Este campo es requerido",
+    "invalidEmail": "Por favor ingresa un correo válido",
+    "successTitle": "¡Mensaje Enviado!",
+    "successMessage": "Tu cliente de correo ha sido abierto con el mensaje. Por favor envía el correo para completar el proceso.",
+    "sendAnother": "Enviar Otro Mensaje",
+    "errorTitle": "Algo salió mal",
+    "errorMessage": "No se pudo abrir tu cliente de correo. Por favor intenta de nuevo o contáctame directamente en miguelhem.dev@gmail.com",
+    "tryAgain": "Intentar de Nuevo"
+  },
+  "Settings": {
+    "general": "General",
+    "appearance": "Apariencia",
+    "language": "Idioma",
+    "about": "Acerca de",
+    "version": "Versión",
+    "developer": "Desarrollador",
+    "framework": "Framework",
+    "buildTool": "Herramienta de Compilación",
+    "darkMode": "Modo Oscuro",
+    "appearanceDesc": "Cambia entre temas claro y oscuro. El modo oscuro es más cómodo para los ojos en ambientes con poca luz.",
+    "selectLanguage": "Seleccionar Idioma",
+    "languageDesc": "La interfaz se mostrará en el idioma seleccionado.",
+    "aboutDesc": "Un sitio web de portafolio personal inspirado en macOS, construido con React, TypeScript y tecnologías web modernas.",
+    "techStack": "Stack Tecnológico",
+    "createdBy": "Creado por",
+    "rights": "Todos los derechos reservados."
   }
 }

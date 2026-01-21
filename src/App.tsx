@@ -14,6 +14,8 @@ import { ContentComponent } from "./pages/content";
 import { Toolbar } from "./pages/toolbar";
 import { StyledContentWrapper, StyledPixelArt } from "./App.styled";
 import pixelArtImage from "./assets/pixel-art-48.png";
+import { WindowManagerProvider } from "context";
+import { WindowRenderer } from "shared";
 
 // AppLayout component defined outside App to prevent recreation on re-renders
 const AppLayout: FC = () => {
@@ -23,6 +25,7 @@ const AppLayout: FC = () => {
   const [isClose, setIsClose] = useState<boolean>(false);
   const [hasAnimated, setHasAnimated] = useState<boolean>(false);
   const [isMinimizeAnimating, setIsMinimizeAnimating] = useState<boolean>(false);
+  const [currentLang, setCurrentLang] = useState<Lang>("en");
 
   // Wrapper to trigger animation only when going from not-minimized to minimized
   const handleMinimize = (value: boolean) => {
@@ -34,6 +37,7 @@ const AppLayout: FC = () => {
 
   const toggleLang = (lang: Lang) => {
     i18n.changeLanguage(lang);
+    setCurrentLang(lang);
   };
 
   const themeMode = useMemo(() => {
@@ -42,33 +46,41 @@ const AppLayout: FC = () => {
 
   return (
     <ThemeProvider theme={themeMode}>
-      <GlobalStyle />
-      <Navigation
-        toggleLang={toggleLang}
-        toggleTheme={themeToggler}
-        theme={theme}
-      />
-      <StyledContentWrapper>
-        <ContentComponent
-          setMinimize={handleMinimize}
-          setMaximize={setMaximize}
-          maximize={maximize}
-          minimize={minimize}
-          themeMode={themeMode}
-          isClose={isClose}
-          setIsClose={setIsClose}
-          isMinimizeAnimating={isMinimizeAnimating}
-          setIsMinimizeAnimating={setIsMinimizeAnimating}
+      <WindowManagerProvider>
+        <GlobalStyle />
+        <Navigation
+          toggleLang={toggleLang}
+          toggleTheme={themeToggler}
+          theme={theme}
         />
-        <StyledPixelArt
-          $hasAnimated={hasAnimated}
-          onAnimationEnd={() => setHasAnimated(true)}
-          onClick={() => setIsClose(false)}
-        >
-          <img src={pixelArtImage} alt="Pixel Art Character" />
-        </StyledPixelArt>
-      </StyledContentWrapper>
-      <Toolbar setMinimize={setMinimize} minimize={minimize} />
+        <StyledContentWrapper>
+          <ContentComponent
+            setMinimize={handleMinimize}
+            setMaximize={setMaximize}
+            maximize={maximize}
+            minimize={minimize}
+            themeMode={themeMode}
+            isClose={isClose}
+            setIsClose={setIsClose}
+            isMinimizeAnimating={isMinimizeAnimating}
+            setIsMinimizeAnimating={setIsMinimizeAnimating}
+          />
+          <StyledPixelArt
+            $hasAnimated={hasAnimated}
+            onAnimationEnd={() => setHasAnimated(true)}
+            onClick={() => setIsClose(false)}
+          >
+            <img src={pixelArtImage} alt="Pixel Art Character" />
+          </StyledPixelArt>
+        </StyledContentWrapper>
+        <Toolbar />
+        <WindowRenderer
+          theme={theme}
+          toggleTheme={themeToggler}
+          currentLang={currentLang}
+          setLang={setCurrentLang}
+        />
+      </WindowManagerProvider>
     </ThemeProvider>
   );
 };
